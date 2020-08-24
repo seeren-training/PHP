@@ -11,7 +11,7 @@ ___
 
 Le `$` permet de déclarer une variable
 
-![image](./resources/php-variable.png)
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/php-variable.png)
 
 ### 🏷️ **[Var](https://www.php.net/manual/fr/language.variables.php)**
 
@@ -19,7 +19,7 @@ Le `$` permet de déclarer une variable
 $foo;
 ```
 
-En cas de passage par référence il est possible de ne pas affecter de valeur à une variable. Hormis ce cas vous devez fournir une valeur, le type n'est pas à éclarer et il peut varier.
+En cas de passage par référence il est possible de ne pas affecter de valeur à une variable. Hormis ce cas vous devez fournir une valeur, le type n'est pas à déclarer et il peut varier.
 
 ```php
 $foo = true;
@@ -68,11 +68,11 @@ $bar = "baz";
 echo $foo; // baz
 ```
 
-C'est utile quand une fonction modifie une variable en utilisant sa référence plutot que d'utiliser une valeur de retour.
+C'est utile quand une fonction modifie une variable en utilisant sa référence plutôt que d'utiliser une valeur de retour.
 
 ### 🏷️ **[Constantes](https://www.php.net/manual/fr/language.constants.php)**
 
-Les constantes sont des espace de stockages dont la valeur ne peut pas varier. Elle est accéssible en lecture mais pas en écriture.
+Les constantes sont des espace de stockages dont la valeur ne peut pas varier. Elle est accessible en lecture mais pas en écriture.
 
 Pour les déclarer il faut utiliser la fonction `define`.
 
@@ -122,7 +122,7 @@ var_dump(7.7);
 $foo = 'foo';
 ```
 
-La double quote permet d'interpoller des variables.
+La double quote permet d’interpoler des variables.
 
 ```php
 $name = 'John';
@@ -220,7 +220,7 @@ La fonction `array_pop` renvoie et supprime le dernier élément du tableau.
 echo array_pop($foo); // baz
 ```
 
-La méthode `splice` modifie le contenu d'un tableau en retirant des éléments et/ou en ajoutant de nouveaux éléments à même le tableau puis le réindexé.
+La méthode `splice` modifie le contenu d'un tableau en retirant des éléments et/ou en ajoutant de nouveaux éléments à même le tableau puis le ré-indexé.
 
 ```php
 array_splice($foo, 2, 1);
@@ -244,9 +244,9 @@ ___
 
 ## 📑 Object
 
-Loin d'aprendre la programmation objet maintenant, penchons nous sur ce type.
+Loin d’apprendre la programmation objet maintenant, penchons nous sur ce type.
 
-![image](./resources/object.jpg)
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/object.jpg)
 
 Tous les objets possèdent une valeur qui est modifiée par référence: quand vous passerez un objet en argument et que vous le modifiez, vous ne modifiez pas une copie comme pour les types primitifs, il sera modifié dans le contexte d'appel.
 
@@ -291,6 +291,6 @@ ___
 
 Déclarez des tableaux associatifs ou des objets représentant la donnée que vous voulez exploiter, stockez les dans le dossier `entity`. C'est la couche model que vous représentez actuellement.
 
-Utlisez vos modèles dans votre vue.
+Utilisez vos modèles dans votre vue.
 
 ___

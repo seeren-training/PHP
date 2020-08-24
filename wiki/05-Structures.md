@@ -155,7 +155,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Utilisez la structure conditionelle dans votre affichage.
+Utilisez la structure conditionnelle dans votre affichage.
 
 ___
 
@@ -259,8 +259,7 @@ foreach ($array as $value) {
 
 > foreach ($array as $key => $value) {}
 
-Il est possible de demande l'indice du tableau ou le nom dela propriété de l'objet en cours d'itération
-
+Il est possible de demande l'indice du tableau ou le nom de la propriété de l'objet en cours d'itération
 
 ```php
 $array = ["John", "Bryan"];
@@ -273,7 +272,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Utilisez la structure ittérative dans votre affichage.
+Utilisez la structure itérative dans votre affichage.
 
 ___
 
@@ -380,7 +379,7 @@ Si vous fournissez le mauvais type la valeur sera convertie si c'est possible.
 
 #### **Portée**
 
-Une variable déclarée dans une fonction est locale: elle n'est pas disponible en dehors de la fonction. Pour qu'une fonction utilise une varaible déclarée localement, il faut utiliser le mot `global`.
+Une variable déclarée dans une fonction est locale: elle n'est pas disponible en dehors de la fonction. Pour qu'une fonction utilise une variable déclarée localement, il faut utiliser le mot `global`.
 
 ```php
 $message = "Hello";
@@ -411,4 +410,4 @@ ___
 
 ___
 
-> En utilisant la programmation fonctionelle vous venez de séparer par couche les responsabilités de votre programme...
+> En utilisant la programmation fonctionnelle vous venez de séparer par couche les responsabilités de votre programme...

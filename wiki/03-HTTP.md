@@ -1,18 +1,18 @@
-# Output
+# HTTP
 
 *  🔖 **Body**
 *  🔖 **Headers**
 *  🔖 **Status**
 
-> Avec ce langage nous réagisons à une requête uilisateur en fournissant une réponse par le biais du protocol HTTP. Observons les éléments de réponses que nous pouvons apporter et leur syntaxe.
+> Avec ce langage nous réagissons à une requête utilisateur en fournissant une réponse par le biais du protocol HTTP. Observons les éléments de réponses que nous pouvons apporter et leur syntaxe.
 
 ___
 
-![image](./resources/http.png)
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/http.png)
 
 ## 📑 [Body](https://en.wikipedia.org/wiki/HTTP_message_body)
 
-Le corp d'une réponse correspond au document délivré au navigateur web, au contenu affiché.
+Le corps d'une réponse correspond au document délivré au navigateur web, au contenu affiché.
 
 ### 🏷️ **[echo](https://www.php.net/manual/fr/function.echo.php)**
 
@@ -24,7 +24,7 @@ La structure du langage `echo` affiche une chaine de caractère.
 echo "Hello";
 ```
 
-Il dispose d'une version courte qui doit être utilisée quand vous mélangez php avec du contenu statique. En efet quand vous dynamisez du contenu comme de l'HTML il n'est pas pratique d'utiliser la syntaxe suivante.
+Il dispose d'une version courte qui doit être utilisée quand vous mélangez php avec du contenu statique. En effet quand vous dynamisez du contenu comme de l'HTML il n'est pas pratique d'utiliser la syntaxe suivante.
 
 ```php
 <h1>
@@ -58,13 +58,13 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Utilisez include pour afficher une page html et echo au sein des fichiers incluts pour les valeurs qui seront dynamiques. Le fichier inclu doit également utiliser include pour ne pas répéter des éléments communs à toutes les futures pages web.
+Utilisez include pour afficher une page html et echo au sein des fichiers inclut pour les valeurs qui seront dynamiques. Le fichier inclut doit également utiliser include pour ne pas répéter des éléments communs à toutes les futures pages web.
 
 ___
 
 ## 📑 [Headers](https://en.wikipedia.org/wiki/List_of_HTTP_header_fields#Response_fields)
 
-Les entêtes d'une réponse correspond à des instructions qu le navigateur doit prendre en compte, par exemple pour stocker la réponse en cache, ou pour formater son corp.
+Les entêtes d'une réponse correspond à des instructions qu le navigateur doit prendre en compte, par exemple pour stocker la réponse en cache, ou pour formater son corps.
 
 ### 🏷️ **[header](https://www.php.net/manual/fr/function.header.php)**
 
@@ -94,11 +94,11 @@ ___
 
 ## 📑 [Status](https://developer.mozilla.org/fr/docs/Web/HTTP/Status)
 
-Un code de status d'une réponse indique son état, son status. Il est composé d'un nombre et d'un texte asssocié normalisé.
+Un code de status d'une réponse indique son état, son status. Il est composé d'un nombre et d'un texte associé normalisé.
 
 Vous avez déjà rencontré des pages 404, ceci est un code de status. Il y a 5 catégories de code pour indiquer une information, un succès, une redirection, une erreur ou une erreur interne.
 
-Pour définir le status d'une réponse en PHP il faut utiliser la fonction `header`, le protocol et sa versison doivent être spécifiés. Vous remarquez que par défaut le status est 200 OK.
+Pour définir le status d'une réponse en PHP il faut utiliser la fonction `header`, le protocol et sa version doivent être spécifiés. Vous remarquez que par défaut le status est 200 OK.
 
 ```php
 header("HTTP/1.1 404 Not Found")

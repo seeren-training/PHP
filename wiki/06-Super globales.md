@@ -7,7 +7,7 @@
 
 ___
 
-![images](./resources/superglobals.png)
+![images](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/superglobals.png)
 
 ## 📑 [Définition](https://www.php.net/manual/fr/language.variables.superglobals.php)
 
@@ -17,7 +17,7 @@ Plusieurs variables prédéfinies en PHP sont "superglobales", ce qui signifie q
 
 > Il existe plusieurs super globales par thématique, nous observerons certaines de ces variables dans ce chapitre.
 
-### 🏷️ **Accés**
+### 🏷️ **Accès**
 
 Pour accéder à une super globale vous pouvez l'utiliser comme n'importe quelle variable.
 
@@ -25,7 +25,7 @@ Pour accéder à une super globale vous pouvez l'utiliser comme n'importe quelle
 var_dump($_SERVER);
 ```
 
-Vous constaterez que c'est un tableau assicatif et pouvez accéder à ses éléments avec ses indices.
+Vous constaterez que c'est un tableau associatif et pouvez accéder à ses éléments avec ses indices.
 
 ```php
 echo $_SERVER["REMOTE_ADDR"]; // ::1
@@ -47,11 +47,11 @@ if (array_key_exists("REMOTE_ADDR", $_SERVER)) {
 }
 ```
 
-De ce fait accéder directement à une uper globale est une mauvaise pratique.
+De ce fait accéder directement à une super globale est une mauvaise pratique.
 
 ### 🏷️ **Filter input**
 
-Une meilleu pratique pour accéder aux variables globales et l'utilisation de `filter_input`. Vous pouvez accéder à un élément d'une super globale et sa valeur sera constante, peut importe le traitement qu'il sera fait à la variable.
+Une meilleur pratique pour accéder aux variables globales et l'utilisation de `filter_input`. Vous pouvez accéder à un élément d'une super globale et sa valeur sera constante, peut importe le traitement qu'il sera fait à la variable.
 
 ```php
 echo filter_input($_SERVER, "REMOTE_ADDR"); // ::1
@@ -71,9 +71,9 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Relevez les variables utiles pour représenter l'url. Nous souhaitons la partie d'url qui ne comporte pas le host et le port. Relever les variables en fonction de votre contexte d'éxécution.
+Relevez les variables utiles pour représenter l'url. Nous souhaitons la partie d'url qui ne comporte pas le host et le port. Relever les variables en fonction de votre contexte d’exécution.
 
-Vous pouvez alors multiplier vos page: utiliser cete variable et la structure conditionnelle pour passer par un controller ou un autre en fonction de la valeur de cette variable. Par exemple l'url "/products" affiche une liste de produits alors que "contact" affiche un formulaire de contact.
+Vous pouvez alors multiplier vos page: utiliser cette variable et la structure conditionnelle pour passer par un controller ou un autre en fonction de la valeur de cette variable. Par exemple l'url "/products" affiche une liste de produits alors que "contact" affiche un formulaire de contact.
 
 ___
 
@@ -108,11 +108,11 @@ ___
 
 Un tableau associatif des valeurs passées au script courant via le protocole HTTP et la méthode POST lors de l'utilisation de la chaîne application/x-www-form-urlencoded ou multipart/form-data comme en-tête HTTP Content-Type dans la requête.
 
-Donc si une requête possède une métthode `POST` et une entête ` application/x-www-form-urlencoded` ou `multipart/form-data` généré automatiquement par les formulaires, alors le tableau associatif sera peuplé de la donnée postée.
+Donc si une requête possède une méthode `POST` et une entête ` application/x-www-form-urlencoded` ou `multipart/form-data` généré automatiquement par les formulaires, alors le tableau associatif sera peuplé de la donnée postée.
 
 ### 🏷️ **Formulaire**
 
-Pour envoyer une requête en `POST` avec un formulaire vous devez utiliser l'attribut method de la balise form.
+Pour envoyer une requête en `POST` avec un formulaire vous devez utiliser l'attribut `method` de la balise form.
 
 ```html
 <form method="post" action="">
@@ -120,18 +120,18 @@ Pour envoyer une requête en `POST` avec un formulaire vous devez utiliser l'att
 
 ### 🏷️ **Input**
 
-Pour qu'une valeur soit postée depuis un élément de formulaire, il faut que l'élément d'intereaction possède une valeur sur son attribut name.
+Pour qu'une valeur soit postée depuis un élément de formulaire, il faut que l'élément d’interaction possède une valeur sur son attribut `name`.
 
 ```html
 <input name="foo" />
 ```
 
-En postant le formulaire détaillé avec un botton ou un input submit le tableau des POST sera peuplé de la manière suivante.
+En postant le formulaire détaillé avec un boutton ou un input submit le tableau des POST sera peuplé de la manière suivante.
 
 ```js
 array(1) {
   ["foo"]=>
-  string(3) "valeur tappée par l'utilisateur"
+  string(3) "valeur tapée par l'utilisateur"
 }
 ```
 

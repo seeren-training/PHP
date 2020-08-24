@@ -21,7 +21,7 @@ PHP est un "langage de programmation" libre, principalement utilisé pour produi
 * **2004**: PHP 5, powered by the Zend Engine 2.0, le model objet gagne en maturité.
 * **2015**: PHP 7, powered by the Zend Engine 3.0, les performance sont améliorés et le typage est renforcé.
 
-![image](./resources/history.png)
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/history.png)
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 PHP est un langage au typage faible et dynamique.
 
-![image](./resources/data-types.jpg)
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/data-types.jpg)
 
 ___
 
@@ -88,9 +88,9 @@ La question à se poser quand vous commencer un nouveau langage c'est: quel est 
 
 ### 🏷️ **[Composer](https://getcomposer.org/)**
 
-Composer est le package manager pour l'ecosystme PHP, les package installables reposent sur le site associé [packagist](https://packagist.org/).
+Composer est le package manager pour écosystème PHP, les package installables reposent sur le site associé [packagist](https://packagist.org/).
 
-![image](./resources/composer.png)
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/composer.png)
 ___
 
 👨🏻‍💻 Manipulation
