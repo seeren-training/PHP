@@ -193,7 +193,6 @@ project-name/
 ├─ src/
 │   ├─ controller/
 │   ├─ entity/
-│   ├─ form/
 │   ├─ repository/
 │   └─ services/
 |

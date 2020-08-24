@@ -90,6 +90,13 @@ header("Content-Type: application/json")
 
 Vous remarquez que par défaut le type de contenu est text/html, il peut se configurer dans le fichier `php.ini`.
 
+#### **Redirection**
+
+Pour demander une redirection au navigateur le header location dit être utilisé.
+
+```php
+header("Location: /some-url")
+```
 ___
 
 ## 📑 [Status](https://developer.mozilla.org/fr/docs/Web/HTTP/Status)
