@@ -141,4 +141,7 @@ ___
 
 Créez un formulaire pour créer une entité, un produit, un commentaire par exemple, à adapter selon votre thématique.
 
-Attention, vous devez procéder à certains tests logiques, si le formulaire n'est pas correctement formulé, vous devez gérer l'affichage des erreur.
+Attention, vous devez procéder à certains tests logiques, si le formulaire n'est pas correctement formulé, vous devez gérer l'affichage des erreur. Vous pouvez utiliser filter_input pour valider vtre donnée!
+
+Refactoring: les services permettent de stocker la logique métier, utiliser un service et une fonction dans ce service pour déplacer la logique métier (la validation du formulaire).
+

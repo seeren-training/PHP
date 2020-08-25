@@ -15,10 +15,12 @@ ___
 
 * [Introduction](https://github.com/seeren-training/PHP/wiki/01)
 * [Environnement](https://github.com/seeren-training/PHP/wiki/02)
-* [HTTP](https://github.com/seeren-training/PHP/wiki/02)
-* [Variables](https://github.com/seeren-training/PHP/wiki/03)
-* [Structures](https://github.com/seeren-training/PHP/wiki/04)
-* [Super globales](https://github.com/seeren-training/PHP/wiki/05)
+* [HTTP](https://github.com/seeren-training/PHP/wiki/03)
+* [Variables](https://github.com/seeren-training/PHP/wiki/04)
+* [Structures](https://github.com/seeren-training/PHP/wiki/05)
+* [Super globales](https://github.com/seeren-training/PHP/wiki/06)
+* [XSS](https://github.com/seeren-training/PHP/wiki/07)
+* [Fichiers](https://github.com/seeren-training/PHP/wiki/08)
 
 ___
 
