@@ -58,7 +58,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Utilisez include pour afficher une page html et echo au sein des fichiers inclut pour les valeurs qui seront dynamiques. Le fichier inclut doit également utiliser include pour ne pas répéter des éléments communs à toutes les futures pages web.
+Utilisez include pour afficher une page html et echo au sein des fichiers inclut pour les valeurs qui seront dynamiques. Le fichier inclut doit également utiliser include pour ne pas répéter des éléments communs à toutes les futures pages web comme le header ou footer.
 
 ___
 

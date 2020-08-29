@@ -20,7 +20,10 @@ ___
 * [Structures](https://github.com/seeren-training/PHP/wiki/05)
 * [Super globales](https://github.com/seeren-training/PHP/wiki/06)
 * [XSS](https://github.com/seeren-training/PHP/wiki/07)
-* [Fichiers](https://github.com/seeren-training/PHP/wiki/08)
+* [Regex](https://github.com/seeren-training/PHP/wiki/08)
+* [Fichier](https://github.com/seeren-training/PHP/wiki/09)
+* [Session](https://github.com/seeren-training/PHP/wiki/10)
+* [PDO](https://github.com/seeren-training/PHP/wiki/11)
 
 ___
 

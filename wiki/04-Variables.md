@@ -143,7 +143,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Déclarer des variables et utiliser les dans des templates pour les informations qui devront varier à l'avenir.
+Déclarer des variables et les utiliser dans des templates pour les informations qui devront varier à l'avenir.
 
 ___
 
@@ -186,7 +186,7 @@ Par défaut chaque élément du tableau est associé à un indice numérique pou
 $colorList = [
     'red' => '#ff0000',
     'green' => '#00ff00',
-    'blue' => '#ff0000',
+    'blue' => '#0000ff',
 ];
 ```
 
@@ -254,13 +254,13 @@ Tous les objets possèdent une valeur qui est modifiée par référence: quand v
 
 Il existe de nombreux objets intégrés et vous pouvez en définir également.
 
-* Instancier un `constructeur`.
+* Instancier une `classe`.
 
 ```php
 $obj = new stdClass();
 ```
 
-Un constructeur standard est disponible avec la class `stdClass`. C'est une class dont vous pouvez ajouter et récupérer les attributs de façon publiques.
+Un constructeur standard est disponible avec la classe `stdClass`. C'est une classe dont vous pouvez ajouter et récupérer les attributs de façon publiques.
 
 ### 🏷️ **Manipulation**
 
@@ -289,7 +289,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Déclarez des tableaux associatifs ou des objets représentant la donnée que vous voulez exploiter, stockez les dans le dossier `entity`. C'est la couche model que vous représentez actuellement.
+Déclarez des tableaux associatifs ou des objets représentant la donnée que vous voulez exploiter, stockez les dans le dossier `entity` avec un fichier par sujet. C'est la couche model que vous représentez actuellement.
 
 Utilisez vos modèles dans votre vue.
 

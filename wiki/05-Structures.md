@@ -78,7 +78,7 @@ Les opérateurs logiques renvoient uniquement des valeurs booléennes.
 |Ou|\|\||a \|\| x|
 |Non|!|!a|
 
-**####** !
+#### **!**
 
 L'opérateur ! renvoie true si son opérande peut être convertie à false, sinon il renvoie false.
 
@@ -190,7 +190,6 @@ Le bloc finally s'utilise pour exécuter des instructions après avoir essayé d
 
 ```php
 try {
-try {
     new Foo();
     echo 'try';
 } catch (Throwable $e) {
@@ -218,7 +217,7 @@ try {
 } catch (Error $e) {
     echo 'catch error'; // catch error
 } catch (Exception $e) {
-    echo 'catch';
+    echo 'catch exception';
 } finally {
     echo 'finally'; // finally
 }
@@ -310,7 +309,7 @@ ___
 
 Les fonctions sont des objets Function qui permettent d'encapsuler des instructions dans un bloc afin d'y faire appel. Les fonctions peuvent posséder des arguments afin de leur transmettre des valeurs et peuvent également retourner une valeur de fin d'instruction.
 
-![image](https://raw.githubusercontent.com/seeren-training/JavaScript/master/wiki/resources/instrution-bloc.png)
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/instrution-bloc.png)
 
 ### 🏷️ **Déclaration**
 
@@ -396,6 +395,8 @@ ___
 
 👨🏻‍💻 Manipulation MVC
 
+**Vous devez affficher une page web en utilisant une fonction d'un controller, qui associe le model et la vue.**
+
 * Controllers
 
 **Un controller a la responsabilité de fournir une réponse HTTP** pour une thématique comme product, member etc. Créez un fichier dans le dossier `controller` et fournissez une fonction fournissant une réponse, elle doit être appelée dans le point d'entré de l'application.
@@ -407,7 +408,3 @@ ___
 * Templates
 
 **Un template ou une vue a la responsabilité de formater de la donnée dans un format d'affichage**, HTML par exemple. Chaque fonction d'un controller possède son template, créez alors pour le controller un dossier portant son nom avec un fichier de template correspondant au nom de sa fonction.
-
-___
-
-> En utilisant la programmation fonctionnelle vous venez de séparer par couche les responsabilités de votre programme...

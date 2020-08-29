@@ -73,7 +73,7 @@ ___
 
 Relevez les variables utiles pour représenter l'url. Nous souhaitons la partie d'url qui ne comporte pas le host et le port. Relever les variables en fonction de votre contexte d’exécution.
 
-Vous pouvez alors multiplier vos page: utiliser cette variable et la structure conditionnelle pour passer par un controller ou un autre en fonction de la valeur de cette variable. Par exemple l'url "/products" affiche une liste de produits alors que "contact" affiche un formulaire de contact.
+Vous pouvez alors multiplier vos page: **utiliser cette variable et la structure conditionnelle pour passer par un controller ou un autre** en fonction de la valeur de cette variable. Par exemple l'url "/products" affiche une liste de produits alors que "contact" affiche un formulaire de contact. **Gérer le cas de page non trouvée**.
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Fournissez un lien vers l'affichage d'un item unitaire d'une liste. Par exemple `/products?id=1` doit afficher un produit de la liste des produits.
+**Fournissez un lien vers l'affichage d'un item unitaire** d'une liste. Par exemple `/products?id=1` doit afficher un produit de la liste des produits.
 
 ___
 
@@ -139,9 +139,9 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Créez un formulaire pour créer une entité, un produit, un commentaire par exemple, à adapter selon votre thématique.
+**Créez un formulaire pour créer une entité**, un produit, un commentaire par exemple, à adapter selon votre thématique.
 
-Attention, vous devez procéder à certains tests logiques, si le formulaire n'est pas correctement formulé, vous devez gérer l'affichage des erreur. Vous pouvez utiliser filter_input pour valider vtre donnée!
+Attention, vous devez procéder à certains tests logiques, si le formulaire n'est pas correctement formulé, vous devez **gérer l'affichage des erreurs**. Vous pouvez utiliser filter_input pour valider votre donnée!
 
-Refactoring: les services permettent de stocker la logique métier, utiliser un service et une fonction dans ce service pour déplacer la logique métier (la validation du formulaire).
+Refactoring: **les services permettent de stocker la logique métie**r, utiliser un service et une fonction dans ce service pour déplacer la logique métier (la validation du formulaire).
 
