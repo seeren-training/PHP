@@ -13,11 +13,11 @@ Le cross-site scripting (abrégé XSS) est un type de faille de sécurité des s
 
 Il y a 3 catégories d'injection XSS possibles, reflected, stored, DOM Based.
 
-La troisème utilise le fragment de l'URL qui n'est pas envoyé à PHP et ne nou concerne pas. En revanche le deux premières nous interessent.
+La troisième utilise le fragment de l'URL qui n'est pas envoyé à PHP et ne nou concerne pas. En revanche le deux premières nous intéressent.
 
 ### 🏷️ **Reflected**
 
-Si une portion d'url contient de la donnée potentiellement capable d'éxécuter un script comme:
+Si une portion d'url contient de la donnée potentiellement capable d’exécuter un script comme:
 
 ```bash
 ?name=<script>alert("Hey")</script>
@@ -33,7 +33,7 @@ Alors il y a un problème concernant la sécurité es données de l'utilisateur 
 
 ### 🏷️ **Stored**
 
-Une injection XSS peut être plus persistente et concerner tous les utilisateurs si la valeur malveillante est stockée dans une base de données et réaffichée sans protection pour tous les utilisateurs qui accèdent à une page qui fait une extraction de donnée pour l'afficher d'une façon non sécurisée.
+Une injection XSS peut être plus persistent et concerner tous les utilisateurs si la valeur malveillante est stockée dans une base de données et ré-affichée sans protection pour tous les utilisateurs qui accèdent à une page qui fait une extraction de donnée pour l'afficher d'une façon non sécurisée.
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 Vous devez au niveau de vos vues échapper la donnée avant de l'afficher.
 
-`filter_var` est utile pour cela, elle prend en argument la valeur à échapper puis des drapeaux de validation ou de nettoyage. Le drapeau de nettoyage nous interesse.
+`filter_var` est utile pour cela, elle prend en argument la valeur à échapper puis des drapeaux de validation ou de nettoyage. Le drapeau de nettoyage nous intéresse.
 
 🔗 [Types de drapeaux](https://www.php.net/manual/fr/filter.filters.sanitize.php)
 

@@ -1,8 +1,8 @@
 # Fichiers
 
 *  🔖 **JSON**
-*  🔖 **Serialisation**
-*  🔖 **Ecriture**
+*  🔖 **Sérialisation**
+*  🔖 **Écriture**
 *  🔖 **Lecture**
 
 > Notre objectif sur ce chapitre est de savoir comment stocker dans des fichiers sur deux formats.
@@ -10,9 +10,9 @@ ___
 
 ## 📑 [JSON](https://fr.wikipedia.org/wiki/JavaScript_Object_Notation)
 
-La notation objet de JavaScript est le format d'inter échanges le plus utilisé. Ce n'est pas pour autant que c'est le bon forat pour du stockage local dans des fichiers "plats". Néamoins dotons nous de cette capacité syntaxique.
+La notation objet de JavaScript est le format d'inter échanges le plus utilisé. Ce n'est pas pour autant que c'est le bon forat pour du stockage local dans des fichiers "plats". Néanmoins dotons nous de cette capacité syntaxique.
 
-Avant de stocker vos données vous devez les convertir et pourqui pas en JSON.
+Avant de stocker vos données vous devez les convertir et pourquoi pas en JSON.
 
 ### 🏷️ **[json_encode](https://www.php.net/manual/fr/function.json-encode.php)**
 
@@ -34,7 +34,7 @@ En effet quand voous allez récupérer une donnée dans un fichier, vous voulez 
 
 ___
 
-## 📑 Serialisation
+## 📑 Sérialisation
 
 La sérialisation consiste à obtenir une représentation au format chaine de caractère d'une valeur, pas particulièrement un tableau ou un objet.
 
@@ -48,14 +48,14 @@ $serialized = json_encode($data);
 
 ### 🏷️ **[unserialize](https://www.php.net/manual/fr/function.unserialize.php)**
 
-Crée une variable PHP à partir d'une valeur serialisée.
+Crée une variable PHP à partir d'une valeur sérialisée.
 
 ```php
 $data = json_encode($serialized);
 ```
 ___
 
-## 📑 Ecriture
+## 📑 Écriture
 
 Il existe de nombreuses fonctions pour écrire dans un fichier. Nous allons regardez les plus directe car le stockage en fichier ne devrait concerner que le cache. Nous stockerons nos fichiers dans le dossier `var/cache`.
 
@@ -71,7 +71,7 @@ $size = file_put_content("var/cache/my-file", $json);
 
 ### 🏷️ **[Chemin](https://www.php.net/manual/fr/language.constants.predefined.php)**
 
-Pour ne pas avoir de problèmes avec l'include_path ou la relativité des chemins, je vous conseil d'utliser la constante magique `__DIR__`. Cette constante nous donne le chemin du repertoire en cours ou le script s'éxécute.
+Pour ne pas avoir de problèmes avec l'include_path ou la relativité des chemins, je vous conseil d’utiliser la constante magique `__DIR__`. Cette constante nous donne le chemin du répertoire en cours ou le script s’exécute.
 
 ```php
 $includePath = __DIR__ . "/../var/cache/";
@@ -79,7 +79,7 @@ $includePath = __DIR__ . "/../var/cache/";
 
 ### 🏷️ **[Séparateur](https://www.php.net/manual/fr/dir.constants.php)**
 
-Concernant les séparateurs, sur linux c'est le slash et sur window c'est l'antislash. Window acceptera également l'antislash, si vous êtes jusqu'auboutiste vous pouvez utiliser la constante `DIRECTORY_SEPARATOR` qui nous donne en fonction du système le caractère qui sert de séparateur.
+Concernant les séparateurs, sur linux c'est le slash et sur window c'est l'antislash. Window acceptera également l'antislash, si vous êtes jusqu’au-boutiste vous pouvez utiliser la constante `DIRECTORY_SEPARATOR` qui nous donne en fonction du système le caractère qui sert de séparateur.
 
 ```php
 $includePath = __DIR__ 
@@ -99,7 +99,7 @@ ___
 
 ## 📑 Lecture
 
-Nous allons regardez a fonction qui accompagne celle observée précédement.
+Nous allons regardez a fonction qui accompagne celle observée précédemment.
 
 ### 🏷️ **[file_get_contents](https://www.php.net/manual/fr/function.file-get-contents.php)**
 
@@ -114,7 +114,7 @@ Cependant si le fichier n'existe pas vous aurez un warning, regardons des foncti
 ### 🏷️ **[is_file](https://www.php.net/manual/fr/function.is-file.php)**
 
 Pour savoir si un fichier xiste et uniquement si c'est un 
-fichier contairement à `file_exists` il faut utiliser `is_file`.
+fichier contrairement à `file_exists` il faut utiliser `is_file`.
 
 ```php
 $bool = is_file($fileName);
@@ -122,7 +122,7 @@ $bool = is_file($fileName);
 
 ### 🏷️ **Http**
 
-La fonction `file_get_contents` permet également de faire ue requête http pour optenir un flux distant. Il faut spécifier son argument include path à false et fournir un contexte avec `stream_context_create`.
+La fonction `file_get_contents` permet également de faire ue requête http pour obtenir un flux distant. Il faut spécifier son argument include path à false et fournir un contexte avec `stream_context_create`.
 
 #### **Contexte**
 
@@ -148,11 +148,8 @@ $body = file_get_content($url, false, $context);
 var_dump($http_response_header);
 ```
 
-
 ___
 
 👨🏻‍💻 Manipulation
 
-Liser vos informations pour enrichir vos modèles. Effectuez les opérations d'écriture/lecture dans des services appropriés.
-
-___
+Lisez vos informations pour enrichir vos modèles. Effectuez les opérations d'écriture/lecture dans des services appropriés.

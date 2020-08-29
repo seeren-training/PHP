@@ -4,7 +4,7 @@
 *  🔖 **Headers**
 *  🔖 **Status**
 
-> Avec ce langage nous réagissons à une requête utilisateur en fournissant une réponse par le biais du protocol HTTP. Observons les éléments de réponses que nous pouvons apporter et leur syntaxe.
+> Avec ce langage nous réagissons à une requête utilisateur en fournissant une réponse par le biais du protocole HTTP. Observons les éléments de réponses que nous pouvons apporter et leur syntaxe.
 
 ___
 
@@ -105,7 +105,7 @@ Un code de status d'une réponse indique son état, son status. Il est composé 
 
 Vous avez déjà rencontré des pages 404, ceci est un code de status. Il y a 5 catégories de code pour indiquer une information, un succès, une redirection, une erreur ou une erreur interne.
 
-Pour définir le status d'une réponse en PHP il faut utiliser la fonction `header`, le protocol et sa version doivent être spécifiés. Vous remarquez que par défaut le status est 200 OK.
+Pour définir le status d'une réponse en PHP il faut utiliser la fonction `header`, le protocole et sa version doivent être spécifiés. Vous remarquez que par défaut le status est 200 OK.
 
 ```php
 header("HTTP/1.1 404 Not Found")

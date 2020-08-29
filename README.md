@@ -2,7 +2,7 @@
 
 ## Durée
 
-35 heures
+56 heures
 
 ___
 

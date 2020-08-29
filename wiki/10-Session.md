@@ -19,19 +19,19 @@ ___
 
 En PHP il faudra démarrer la session, à ce moment il y a deux possibilités. 
 * Si le client n'est jamais venu, 
-    * PHP génère un identifiant de session unique pour le client et créé un fichier dans le dossier temporaire du serveur afin de stocker ses données. Les données que l'on voudra personelle à l'utilisateur devront être affectée à la super globale $_SESSION. PHP ajoute aux entêtes de réponse un header setCookie avec l'identifiant de session afin que le navigateur enregistre ce cookie en mémoire.
+    * PHP génère un identifiant de session unique pour le client et créé un fichier dans le dossier temporaire du serveur afin de stocker ses données. Les données que l'on voudra personnelle à l'utilisateur devront être affectée à la super globale $_SESSION. PHP ajoute aux entêtes de réponse un header setCookie avec l'identifiant de session afin que le navigateur enregistre ce cookie en mémoire.
 * Sinon,
-    * Un cookie existe chez le client et il envoie ce cookie dans les entêtes de la requette. Le serveur intercepte le cookie, ouvre le fichier de session de l'utilisateur avec l'identifiant de session stocké dans le cookie et peuple la super globale $_SESSION des informations dans le fichier.
+    * Un cookie existe chez le client et il envoie ce cookie dans les entêtes de la requête. Le serveur intercepte le cookie, ouvre le fichier de session de l'utilisateur avec l'identifiant de session stocké dans le cookie et peuple la super globale $_SESSION des informations dans le fichier.
 
 ### 🏷️ **State**
 
-Avec ce mécanisme, un client peut avoir un résultat de réponse qui lui sera personelle, pour la même adresse des clients autont des résultats différents, l'on parle alors d'application avec etat, avec une mise en cache  bannir pour que les données de l'un ne soit pas disponible pour un autre. A l'inverse d'un web service.
+Avec ce mécanisme, un client peut avoir un résultat de réponse qui lui sera personnelle, pour la même adresse des clients auront des résultats différents, l'on parle alors d'application avec état, avec une mise en cache  bannir pour que les données de l'un ne soit pas disponible pour un autre. A l'inverse d'un web service.
 
 ___
 
 ## 📑 [Start](https://www.php.net/manual/fr/function.session-start.php)
 
-La fonction `sesion_start` Démarre une nouvelle session ou reprend une session existante. Vous devez éxécuter sesion_start avant qu'un affichage se produise parce que cette fonction envoie des entêtes http.
+La fonction `sesion_start` Démarre une nouvelle session ou reprend une session existante. Vous devez exécuter sesion_start avant qu'un affichage se produise parce que cette fonction envoie des entêtes http.
 
 ```php
 session_start();
@@ -39,7 +39,7 @@ session_start();
 
 ### 🏷️ **Utilisation**
 
-Après avoir démarré une session, vous pouvez utiliser $_SESSION. C'est un tableau qui stock les donées de l'utilisateur.
+Après avoir démarré une session, vous pouvez utiliser $_SESSION. C'est un tableau qui stock les données de l'utilisateur.
 
 ```php
 if (!array_key_exists("count", $_SESSION)) {
@@ -49,7 +49,7 @@ if (!array_key_exists("count", $_SESSION)) {
 echo ++$_SESSION["count"];
 ```
 
-D'une requête à l'autre les valeurs de la session sont conservée grace au mécanisme expliqué précédement.
+D'une requête à l'autre les valeurs de la session sont conservée grâce au mécanisme expliqué précédemment.
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Utilisez le mécanisme de session pour fournir une fonctionnaité de type panier ou de type favoris.
+Utilisez le mécanisme de session pour fournir une fonctionnalité de type panier ou de type favoris.
 
 ___
 

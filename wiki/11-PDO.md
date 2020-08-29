@@ -4,13 +4,13 @@
 *  🔖 **Instanciation**
 *  🔖 **Prepare**
 *  🔖 **Transaction**
-*  🔖 **Stacité**
+*  🔖 **Staticité**
 
 > Notre objectif sur ce chapitre est de manipuler les bases de données.
 
 ___
 
-![image](./resources/pdo.jpg)
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/pdo.jpg)
 
 ## 📑 [Définition](https://www.php.net/manual/fr/book.pdo.php)
 
@@ -27,7 +27,7 @@ Les extensions se trouvent dans `php/ext/`. Pour l'extension décrite le fichier
 
 ### 🏷️ **Prérequis**
 
-Les prérequis pour manipuler une base de données est la connaissanes d'un langage de base de données ainsi que sa structuration.
+Les prérequis pour manipuler une base de données est la connaissances d'un langage de base de données ainsi que sa structuration.
 
 🔗 [Training SQL](https://github.com/seeren-training/SQL/wiki)
 
@@ -35,7 +35,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Metttez en palce une structure de donnée
+Mettez en place une structure de donnée.
 
 ___
 
@@ -113,14 +113,14 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Piloter votre donnée en utilisat les bases de données.
+Piloter votre données en utilisant les bases de données. Chaque modèle doit posséder un repository qui exécute les instructions SQL.
 
 ___
 
 ## 📑 [Transaction](https://www.php.net/manual/fr/pdo.transactions.php)
 
 
-Dans le cas de plusieurs éxécution, il est important de pouvoir annuler l'une d'entre elle si une erreur apparait. **La transaction permet de valider ou d'annuler un ensemble d'éxécutions** contenue dans un bloc
+Dans le cas de plusieurs exécution, il est important de pouvoir annuler l'une d'entre elle si une erreur apparait. **La transaction permet de valider ou d'annuler un ensemble exécutions** contenue dans un bloc
 
 ### 🏷️ **[Open](https://www.php.net/manual/fr/pdo.begintransaction.php)**
 
@@ -172,5 +172,3 @@ ___
 👨🏻‍💻 Manipulation
 
 Utilisez la staticité pour réduire le nombre d'instance de PDO sans passer par les variables globales.
-
-___

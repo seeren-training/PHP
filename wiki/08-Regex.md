@@ -1,7 +1,7 @@
 # Regex
 
 *  🔖 **Définition**
-*  🔖 **Délimitateurs**
+*  🔖 **Délimiteurs**
 *  🔖 **Drapeaux**
 *  🔖 **Limites**
 *  🔖 **Ensemble de caractères**
@@ -10,7 +10,7 @@
 
 ___
 
-![images](./resources/regex.jpg)
+![images](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/regex.jpg)
 
 ## 📑 [Définition](https://www.php.net/manual/fr/reference.pcre.pattern.syntax.php)
 
@@ -27,7 +27,7 @@ print_r($matches); //Array ( [0] => foobar [1] => foo [2] => bar )
 
 ### 🏷️ **[filters](https://www.php.net/manual/en/function.filter-var.php)**
 
-flter_var ou filter_input peuvent valider une donéne en fonction d'une expression régulière.
+filter_var ou filter_input peuvent valider une donnée en fonction d'une expression régulière.
 
 ```php
 echo filter_var('foobar', FILTER_VALIDATE_REGEXP, [
@@ -150,7 +150,7 @@ Les quantificateurs permettent de quantifier des caractères dans un motif.
 |L'un ou l'autre|\||/x\|y/|
 |Correspond à n occurrences|{n}|/x{n}/|
 |Correspond à n occurrences ou plus|{n,}|/x{n,}/|
-|Correspond à un intervalle entre n et m occurences|{n,m}|/x{n,m}/|
+|Correspond à un intervalle entre n et m occurrences|{n,m}|/x{n,m}/|
 
 ```php
 echo preg_match('#(foo){2}#', 'foobar', $matches); // 0
