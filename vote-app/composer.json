@@ -1,0 +1,12 @@
+{
+    "name": "cyril/vote-app",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "seeren",
+            "email": "consultant@seeren.fr"
+        }
+    ],
+    "require": {}
+}

@@ -115,6 +115,10 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Sans compter sur les valeurs par défaut, envoyez une entête et un status au client en utilisant la fonction header.
+* Sans compter sur les valeurs par défaut, envoyez une entête et un status au client en utilisant la fonction header.
+
+* Affichez une page web suivant votre thématique en utilisant include pour ne pas répéter à l'avenir certaines parties du document. Par rapport à l'organisation du projet réunissez les éléments d'affichage dans le dossier `templates`, c'est l'organisation de vos vues que vous découvrez.
+
+* Utilisez dans vos fichiers 'echo' aux endroit où l'information sera dynamique.
 
 ___

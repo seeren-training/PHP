@@ -1,0 +1,12 @@
+# Deny access to the .htaccess file and will trigger a 403 status code
+<Files .htaccess>
+    order allow,deny
+    deny from all
+</Files>
+#Turn RewriteEngine to On
+RewriteEngine On
+#Deliver static file
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+#Trigger index.php and add query string append flag
+RewriteRule ^(.*)$ index.php [QSA,L]
