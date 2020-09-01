@@ -1,12 +1,28 @@
-
-
 <?php
 
-    header("HTTP/1.1 404 TOTO");
-    header("Content-Type: image/png");
 
-?>
 
-<h1>
-    <?= "Hello" ?>
-</h1>
+echo "INDEX";
+
+//header("HTTP/1.1 200 OK");
+//header("Content-Type: text/html; charset=utf-8");
+//
+//
+//$title = "Mon title";
+//
+//include './../templates/vote-list.html.php';
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
