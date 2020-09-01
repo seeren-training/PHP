@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<?php include './../templates/header.html.php'; ?>
+<?php include './../templates/header.html.php' ?>
 
 <main>
     <div class="container">
@@ -40,7 +40,7 @@
 
 </main>
 
-<?php include './../templates/footer.html.php'; ?>
+<?php include './../templates/footer.html.php' ?>
 
 <script type="text/javascript" src="./node_modules/jquery/dist/jquery.js"></script>
 <script type="text/javascript" src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>
