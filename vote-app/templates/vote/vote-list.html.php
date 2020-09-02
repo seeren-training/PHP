@@ -15,7 +15,7 @@
     <div class="container">
         <div class="row pt-3">
             <h2 class="display-3">
-                <?= $title ?>
+                List des votes
             </h2>
             <form class="ml-auto">
                 <div class="form-group">
@@ -27,15 +27,11 @@
             </form>
         </div>
         <div class="row pt-3 pb-3">
-            <?php
-
-            include './../templates/vote.html.php';
-            include './../templates/vote.html.php';
-            include './../templates/vote.html.php';
-            include './../templates/vote.html.php';
-
-            ?>
+            <?php foreach ($voteList as $vote) : ?>
+                <?php include './../templates/vote.html.php' ?>
+            <?php endforeach; ?>
         </div>
+
     </div>
 
 </main>
