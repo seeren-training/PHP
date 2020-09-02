@@ -1,19 +1,19 @@
-<article class="col-12">
-
-    <span class="col-4 display-4">
-            <?= $vote->title ?>
-    </span>
-    <span class="col-4">
-         <?= $vote->voters ?> votants
-    </span>
-    <span class="col-4">
-        <?php if ($vote->active): ?>
-            <button type="button" class="btn btn-primary">Active</button>
-            <button type="button" class="btn btn-success">Vote</button>
-        <?php else: ?>
-            <button type="button" class="btn btn-danger">Closed</button>
-            <button type="button" class="btn btn-success">Results</button>
-        <?php endif; ?>
-    </span>
-
+<article class="pt-4 pb-4 col-12 row align-items-center border bg-<?= $key % 2 ? "light" : "white" ?>">
+    <span class="col-12 col-md-4 h1"><?= $vote->title ?></span>
+    <span class="col-12 col-md-4"><?= $vote->voters ?> voters</span>
+    <?php if ($vote->active): ?>
+        <div class="col-12 col-md-2">
+            <span class="mt-2 mb-2 badge badge-secondary">Active</span>
+        </div>
+        <div class="col-12 col-md-2">
+            <button class="col-12 btn btn-success">Vote</button>
+        </div>
+    <?php else: ?>
+        <div class="col-12 col-md-2">
+            <span class="mt-2 mb-2 badge badge-secondary">Closed</span>
+        </div>
+        <div class="col-12 col-md-2">
+            <button class="col-12 btn btn-primary">Results</button>
+        </div>
+    <?php endif ?>
 </article>
