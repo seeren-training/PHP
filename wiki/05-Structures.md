@@ -397,6 +397,8 @@ ___
 
 **Vous devez afficher une page web en utilisant une fonction d'un controller, qui associe le model et la vue.**
 
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/mvc.png)
+
 * Controllers
 
 **Un controller a la responsabilité de fournir une réponse HTTP** pour une thématique comme product, member etc. Créez un fichier dans le dossier `controller` et fournissez une fonction fournissant une réponse, elle doit être appelée dans le point d'entré de l'application.

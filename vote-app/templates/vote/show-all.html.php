@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 <?php include __DIR__ . '/../header.html.php' ?>
 
 <main>
@@ -23,7 +16,7 @@
         </div>
         <div class="row pt-3 pb-3 mt-3 mb-3">
             <?php foreach ($voteList as $key => $vote) :
-                include __DIR__ . '/vote-list-item.html.php';
+                include __DIR__ . '/show-all-item.html.php';
             endforeach ?>
         </div>
 
