@@ -6,14 +6,14 @@
             <span class="mt-2 mb-2 badge badge-secondary">Active</span>
         </div>
         <div class="col-12 col-md-2">
-            <button class="col-12 btn btn-success">Vote</button>
+            <a href="/votes?id=<?= $vote->id ?>" class="col-12 btn btn-success">Vote</a>
         </div>
     <?php else: ?>
         <div class="col-12 col-md-2">
             <span class="mt-2 mb-2 badge badge-secondary">Closed</span>
         </div>
         <div class="col-12 col-md-2">
-            <button class="col-12 btn btn-primary">Results</button>
+            <a href="/votes?id=<?= $vote->id ?>" class="col-12 btn btn-primary">Results</a>
         </div>
     <?php endif ?>
 </article>
