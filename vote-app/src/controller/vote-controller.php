@@ -3,11 +3,7 @@
 function showAll(): void
 {
     include "./../src/entity/vote.php";
-    $voteList = [
-//        newVote(1, "NobleChairs vs Titan", 234, true),
-//        newVote(2, "Razer vs Dell", 654, false),
-//        newVote(3, "Linux vs Window", 2234, true)
-    ];
+    $voteList = [];
     header("HTTP/1.1 200 OK");
     header("Content-Type: text/html; charset=utf-8");
     include __DIR__ . '/../../templates/vote/show-all.html.php';
@@ -16,11 +12,7 @@ function showAll(): void
 function show(int $id): void
 {
     include "./../src/entity/vote.php";
-    $voteList = [
-//        newVote(1, "NobleChairs vs Titan", 234, true),
-//        newVote(2, "Razer vs Dell", 654, false),
-//        newVote(3, "Linux vs Window", 2234, true)
-    ];
+    $voteList = [];
     $vote = null;
     foreach ($voteList as $value) {
         if ($id === $value->id) {
@@ -35,21 +27,28 @@ function show(int $id): void
 
 function create(): void
 {
-    include "./../src/entity/vote.php";
+    include __DIR__ . "/../entity/vote.php";
+    include __DIR__ . "/../entity/option.php";
     $errorList = [];
-    $vote = newVote(0, "", "", ["Option 1", "Option 2"], 0, true);
+    $vote = newVote();
+    $option1 = newOption();
+    $option2 = newOption();
+    $option1->label = "Option 1";
+    $option2->label = "Option 2";
+    $vote->optionList[] = $option1;
+    $vote->optionList[] = $option2;
     if (null !== filter_input(INPUT_POST, "vote-form")) {
-        $vote->title = filter_input(INPUT_POST, "title");
-        $vote->expiration = filter_input(INPUT_POST, "expiration");
-        $vote->optionList = filter_input_array(INPUT_POST)["options"];
-        if (!$vote->title) {
-            $errorList["title"] = true;
+        if (!($vote->question = filter_input(INPUT_POST, "question"))) {
+            $errorList["question"] = true;
         }
-        if (!$vote->expiration || time() > strtotime($vote->expiration)) {
+        if (!($vote->expiration = filter_input(INPUT_POST, "expiration"))
+            || time() > strtotime($vote->expiration)) {
             $errorList["expiration"] = true;
         }
-        foreach ($vote->optionList as $key => $option) {
-            if (!$option) {
+        foreach (filter_input_array(INPUT_POST)["optionList"] as $key => $value) {
+            $option = newOption();
+            $vote->optionList[$key] = $value;
+            if (!($option->label = $value)) {
                 $errorList["option-$key"] = true;
             }
         }
@@ -58,28 +57,3 @@ function create(): void
     header("Content-Type: text/html; charset=utf-8");
     include __DIR__ . '/../../templates/vote/create.html.php';
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
