@@ -37,8 +37,8 @@ The idea as presented for this relation is to provide following storage.
 |id|label|voters|vote|
 |-|-|-|-|
 |14|France|342|4|
-|14|Angleterre|242|4|
-|14|Italie|312|4|
+|15|Angleterre|242|4|
+|16|Italie|312|4|
 
 ___
 
