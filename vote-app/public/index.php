@@ -2,16 +2,16 @@
 
 $url = filter_input(INPUT_SERVER, "REQUEST_URI");
 
-if ("/votes" === $url) {
-    include './../src/controller/vote-controller.php';
-    showAll();
-} elseif ("/votes?id=" . filter_input(INPUT_GET, "id") === $url) {
-    include './../src/controller/vote-controller.php';
-    show((int)filter_input(INPUT_GET, "id"));
-} elseif ("/votes/create" === $url) {
-    include './../src/controller/vote-controller.php';
+if ("/votes/create" === $url) {
+    require __DIR__ . '/../src/controller/vote-controller.php';
     create();
+} elseif ("/votes" === $url) {
+    require __DIR__ . '/../src/controller/vote-controller.php';
+    showAll();
+} elseif (($id = (int)filter_input(INPUT_GET, "id")) && "/votes?id=$id" === $url) {
+    require __DIR__ . '/../src/controller/vote-controller.php';
+    show($id);
 } else {
-    include './../src/controller/error-controller.php';
+    require './../src/controller/error-controller.php';
     show(404);
 }

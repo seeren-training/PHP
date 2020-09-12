@@ -7,5 +7,8 @@
             "name": "seeren",
             "email": "consultant@seeren.fr"
         }
-    ]
+    ],
+  "require": {
+    "ext-pdo": "*"
+  }
 }

@@ -7,7 +7,7 @@
             <form class="ml-auto">
                 <div class="form-group">
                     <label for="filter" class="d-none">Filter</label>
-                    <select class="form-control" id="filter">
+                    <select class="form-control" id="filter" onchange="alert('Make it work!');">
                         <option>Recent</option>
                         <option>Active</option>
                     </select>

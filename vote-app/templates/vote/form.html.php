@@ -2,7 +2,7 @@
     <div class="col-12 col-md-6 form-group">
         <label for="question">Titre</label>
         <?php if (array_key_exists("question", $errorList)):
-            $alert = "La quesion est requise";
+            $alert = "La quesion est requise et ne doit pas déjà exister";
             include __DIR__ . '/../alert.html.php';
         endif ?>
         <input value="<?= filter_var($vote->question, FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?>"
@@ -14,7 +14,7 @@
             $alert = "L'expiration doit être supérieure à maintenant";
             include __DIR__ . '/../alert.html.php';
         endif ?>
-        <input value="<?= filter_var($vote->expiration, FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?>" type="date"
+        <input value="<?= date("Y-m-d", $vote->expiration) ?>" type="date"
                class="form-control" name="expiration" id="expiration">
     </div>
     <div class="vote-option-group col-12 col-md-6">
@@ -26,7 +26,7 @@
                     include __DIR__ . '/../alert.html.php';
                 endif ?>
                 <input class="vote-option form-control"
-                       value="<?= filter_var($option, FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?>"
+                       value="<?= filter_var($option->label, FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?>"
                        id="option_<?= $key ?>" name="optionList[]" placeholder="Option">
             </div>
         <?php endforeach ?>
@@ -35,6 +35,6 @@
         <a class="add-option btn btn-secondary">Add option</a>
     </div>
     <div class="col-12 text-right">
-        <input type="submit" name="vote-form" class="btn btn-primary"/>
+        <input type="submit" name="vote-form" calue="Créer" class="btn btn-primary"/>
     </div>
 </form>

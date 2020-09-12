@@ -13,11 +13,15 @@ Change the directory
 ```bash
 cd vote-app/public
 ```
+
 Install packages
 
 ```bash
 npm install
 ```
+
+Import [vote_app.sql](./vote_app.sql)
+
 
 ## Run
 

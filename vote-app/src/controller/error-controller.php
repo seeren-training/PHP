@@ -8,5 +8,5 @@ function show(int $statusCode): void
     ];
     header("HTTP/1.1 $statusCode $statusText[$statusCode]");
     header("Content-Type: text/html; charset=utf-8");
-    include "./../templates/error/show.html.php";
+    require "./../templates/error/show.html.php";
 }

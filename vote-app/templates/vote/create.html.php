@@ -11,6 +11,6 @@
     </div>
 </main>
 
-<script type="text/javascript" src="/assets/js/vote-create-add-option.js"></script>
+<script type="text/javascript" src="/assets/js/vote-create-option.js"></script>
 
 <?php include __DIR__ . '/../footer.html.php' ?>
