@@ -10,11 +10,12 @@
 
 ___
 
-![images](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/regex.jpg)
 
 ## 📑 [Définition](https://www.php.net/manual/fr/reference.pcre.pattern.syntax.php)
 
 Une expression rationnelle ou régulière représente un motif qui sera utilisé pour vérifier s'il correspond à des données que l'on souhaite comparer ou extraire.
+
+![images](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/regex.jpg)
 
 ### 🏷️ **[preg_match](https://www.php.net/manual/fr/function.preg-match.php)**
 
@@ -59,7 +60,7 @@ Un drapeau est utile pour préciser comment la correspondance doit se faire entr
 |--|--|--|
 |Insensible à la casse|i|/motif/i|
 |Recherche ligne par ligne|m|/motif/m|
-|Le masque et la chaîne d'entrée sont traitées en [UTF-8](https://fr.wikipedia.org/wiki/Table_des_caract%C3%A8res_Unicode_(0000-0FFF)).|u|/motif/u|
+|Le masque et la chaîne d'entrée sont traitées en UTF-8.|u|/motif/u|
 
 
 ```php
@@ -147,7 +148,6 @@ Les quantificateurs permettent de quantifier des caractères dans un motif.
 |Aucune ou une fois|?|/x?/|
 |S'il est précédé par y|(?=)|/x(?=y)/|
 |S'il n'est pas précédé par y|(?!)|/x(?!y)/|
-|L'un ou l'autre|\||/x\|y/|
 |Correspond à n occurrences|{n}|/x{n}/|
 |Correspond à n occurrences ou plus|{n,}|/x{n,}/|
 |Correspond à un intervalle entre n et m occurrences|{n,m}|/x{n,m}/|

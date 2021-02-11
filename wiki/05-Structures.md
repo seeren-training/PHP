@@ -72,15 +72,29 @@ Pour comparer une égalité non stricte, les valeurs seront converties. Un type 
 
 Les opérateurs logiques renvoient uniquement des valeurs booléennes.
 
-|Opération|Syntaxe|Exemple|
-|---|---|---|
-|Et|&&|a && x|
-|Ou|\|\||a \|\| x|
-|Non|!|!a|
+#### **Et**
 
-#### **!**
+L'opérateur `&&` renvoie true si ses deux opérandes valent true.
 
-L'opérateur ! renvoie true si son opérande peut être convertie à false, sinon il renvoie false.
+```php
+var_dump(true && true);
+```
+
+#### **Ou**
+
+L'opérateur `||` renvoie true si une de ses opérandes vaut true.
+
+```php
+var_dump(true || false);
+```
+
+#### **Négation**
+
+L'opérateur `!` renvoie true si son opérande peut être convertie à false, sinon il renvoie false.
+
+```php
+var_dump(!false);
+```
 
 ### 🏷️ **Concaténation**
 
@@ -99,8 +113,6 @@ Le flux d'instructions peut être encapsulé dans des blocs qui s’exécutent s
 ### 🏷️ **if else**
 
 La structure if vérifie une condition dans ses parenthèses puis exécute les instructions dans le bloc délimité par ses accolades si la condition vaut true.
-
-![image](https://raw.githubusercontent.com/seeren-training/JavaScript/master/wiki/resources/if.jpg)
 
 > Si la condition vaut false le code ne sera pas exécuté. Dans le cas d’absence d'opérateurs, les valeurs chaine de caractères vide, 0, false, et null sont équivalentes à false.
 
@@ -167,7 +179,7 @@ L'instruction try catch est composée de deux blocs. Le premier bloc essaie d'ex
 
 ```php
 try {
-    echo 'try'; // try
+    echo 'try';
 } catch (Throwable $e) {
     echo 'catch';
 }
@@ -184,8 +196,6 @@ try {
 }
 ```
 
-![image](https://raw.githubusercontent.com/seeren-training/JavaScript/master/wiki/resources/exception.png)
-
 Le bloc finally s'utilise pour exécuter des instructions après avoir essayé d'exécuter des instructions ou après avoir attrapé une erreur. Il est utile pour effectuer un traitement qu'il y ait eu des erreurs ou non.
 
 ```php
@@ -193,9 +203,9 @@ try {
     new Foo();
     echo 'try';
 } catch (Throwable $e) {
-    echo 'catch'; // catch
+    echo 'catch';
 } finally {
-    echo 'finally'; // finally
+    echo 'finally';
 }
 ```
 
@@ -215,11 +225,11 @@ Il est possible de créer ses propres exceptions pour pouvoir attraper plus fine
 try {
     throw new Error();
 } catch (Error $e) {
-    echo 'catch error'; // catch error
+    echo 'catch error';
 } catch (Exception $e) {
     echo 'catch exception';
 } finally {
-    echo 'finally'; // finally
+    echo 'finally';
 }
 ```
 
@@ -229,11 +239,9 @@ ___
 
 Une itération sert à répéter l'exécution d'instructions, pour parcourir un tableau ou un objet en peu de lignes il existe des structures itératives.
 
-![image](https://raw.githubusercontent.com/seeren-training/JavaScript/master/wiki/resources/for.jpg)
-
 ### 🏷️ **for**
 
-> for ([initiale]; [condition]; [increment]) [{}]
+* for ([initiale]; [condition]; [increment]) [{}]
 
 La boucle for s'appuie sur une expression initiale, une condition et une expression d'incrément pour effectuer une itération. Les expressions et la condition sont optionnelles, mais sans elles il faudra vérifier la condition d'itération à l'intérieur du bloc d'instruction.
 
@@ -245,7 +253,7 @@ for ($i = 0; $i < 5; $i++) {
 
 ### 🏷️ **foreach**
 
-> foreach ($array as $value) {}
+* foreach ($array as $value) {}
 
 La boucle foreach peut itérer tous les objets itérables selon leurs mécanismes d'itération. Il parcourt la première opérande sur la valeur de ses propriétés ou de ses éléments qu'il affecte à la seconde opérande.
 
@@ -256,7 +264,7 @@ foreach ($array as $value) {
 }
 ```
 
-> foreach ($array as $key => $value) {}
+* foreach ($array as $key => $value) {}
 
 Il est possible de demande l'indice du tableau ou le nom de la propriété de l'objet en cours d'itération
 
@@ -309,13 +317,11 @@ ___
 
 Les fonctions sont des objets Function qui permettent d'encapsuler des instructions dans un bloc afin d'y faire appel. Les fonctions peuvent posséder des arguments afin de leur transmettre des valeurs et peuvent également retourner une valeur de fin d'instruction.
 
-![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/instrution-bloc.png)
-
 ### 🏷️ **Déclaration**
 
 Une fonction peut être une expression ou une instruction, dans les deux cas elles sont un objet Function.
 
-> function identifiant([param1[, param2[, ...,paramN]]]) {}
+* function identifiant([param1[, param2[, ...,paramN]]]) {}
 
 ```php
 function maFonction()
@@ -326,7 +332,7 @@ function maFonction()
 
 #### **return**
 
-> return [expression = null]; 
+* return [expression = null]; 
 
 L'instruction return renvoie la valeur de l'expression qui lui succède et met fin à l'exécution des instructions d'une fonction. L'expression de retour est optionnelle et sa valeur par défaut est null.
 
@@ -393,20 +399,18 @@ echo helloWorld(); // Hello World
 ```
 ___
 
-👨🏻‍💻 Manipulation MVC
+👨🏻‍💻 Manipulation
 
 **Vous devez afficher une page web en utilisant une fonction d'un controller, qui associe le model et la vue.**
 
-![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/mvc.png)
-
 * Controllers
 
-**Un controller a la responsabilité de fournir une réponse HTTP** pour une thématique comme product, member etc. Créez un fichier dans le dossier `controller` et fournissez une fonction fournissant une réponse, elle doit être appelée dans le point d'entré de l'application.
+Un controller a la responsabilité de fournir une réponse HTTP pour une thématique comme product, member etc. Créez un fichier dans le dossier `controller` et fournissez une fonction fournissant une réponse, elle doit être appelée dans le point d'entré de l'application.
 
 * Entity
 
-**Une entité ou un modèle représente une structure d'information et rien d'autre.** Cette information sera formatée en affichage dans un template. Créez un ou plusieurs fichiers dans le dossier `entity` et fournissez une fonction créant un exemplaire de la structure d'information concernée, elle doit être appelée dans le controller.
+Une entité ou un modèle représente une structure d'information et rien d'autre. Cette information sera formatée en affichage dans un template. Créez un ou plusieurs fichiers dans le dossier `entity` et fournissez une fonction créant un exemplaire de la structure d'information concernée, elle doit être appelée dans le controller.
 
 * Templates
 
-**Un template ou une vue a la responsabilité de formater de la donnée dans un format d'affichage**, HTML par exemple. Chaque fonction d'un controller possède son template, créez alors pour le controller un dossier portant son nom avec un fichier de template correspondant au nom de sa fonction.
+Un template ou une vue a la responsabilité de formater de la donnée dans un format d'affichage, HTML par exemple. Chaque fonction d'un controller possède son template, créez alors pour le controller un dossier portant son nom avec un fichier de template correspondant au nom de sa fonction.

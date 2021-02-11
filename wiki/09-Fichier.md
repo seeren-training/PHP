@@ -79,7 +79,7 @@ $includePath = __DIR__ . "/../var/cache/";
 
 ### 🏷️ **[Séparateur](https://www.php.net/manual/fr/dir.constants.php)**
 
-Concernant les séparateurs, sur linux c'est le slash et sur window c'est l'antislash. Window acceptera également l'antislash, si vous êtes jusqu’au-boutiste vous pouvez utiliser la constante `DIRECTORY_SEPARATOR` qui nous donne en fonction du système le caractère qui sert de séparateur.
+Concernant les séparateurs, sur linux c'est le slash et sur window c'est l'antislash. Linux acceptera également l'antislash, si vous êtes jusqu’au-boutiste vous pouvez utiliser la constante `DIRECTORY_SEPARATOR` qui nous donne en fonction du système le caractère qui sert de séparateur.
 
 ```php
 $includePath = __DIR__ 
@@ -113,8 +113,7 @@ Cependant si le fichier n'existe pas vous aurez un warning, regardons des foncti
 
 ### 🏷️ **[is_file](https://www.php.net/manual/fr/function.is-file.php)**
 
-Pour savoir si un fichier xiste et uniquement si c'est un 
-fichier contrairement à `file_exists` il faut utiliser `is_file`.
+Pour savoir si un fichier xiste et uniquement si c'est un fichier contrairement à `file_exists` il faut utiliser `is_file`.
 
 ```php
 $bool = is_file($fileName);
@@ -141,12 +140,14 @@ $context = [
 
 #### **Réponse**
 
-Pour obtenir les informations de réponse comme le status code et les entêtes, après avoir fait une requête avec `file_get_content`, une variable locale nommée [$http_response_header](https://www.php.net/manual/fr/reserved.variables.httpresponseheader.php) sera disponible juste après fournissant les informations.
+Pour obtenir les informations de réponse comme le status code et les entêtes, après avoir fait une requête avec `file_get_content`, une variable locale nommée $http_response_header sera disponible juste après fournissant les informations.
 
 ```php
 $body = file_get_content($url, false, $context);
 var_dump($http_response_header);
 ```
+
+[HTTP Response Header](https://www.php.net/manual/fr/reserved.variables.httpresponseheader.php)
 
 ___
 

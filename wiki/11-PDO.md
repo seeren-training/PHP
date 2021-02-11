@@ -29,8 +29,6 @@ Les extensions se trouvent dans `php/ext/`. Pour l'extension décrite le fichier
 
 Les prérequis pour manipuler une base de données est la connaissances d'un langage de base de données ainsi que sa structuration.
 
-🔗 [Training SQL](https://github.com/seeren-training/SQL/wiki)
-
 ___
 
 👨🏻‍💻 Manipulation
@@ -65,8 +63,8 @@ ___
 
 ## 📑 [Prepare](https://www.php.net/manual/fr/pdo.prepare.php)
 
- Prépare une requête à l'exécution et retourne un objet.
- 
+Prépare une requête à l'exécution et retourne un objet.
+
 ### 🏷️ **Requête**
 
 ```php
@@ -91,19 +89,19 @@ $sth->execute();
 
 ### 🏷️ **[Lecture](https://www.php.net/manual/fr/pdostatement.execute.php)**
 
-#### Lire une ligne
+* Lire une ligne
 
 ```php
 $raw = $sth->fetch();
 ```
 
-#### Lire plusieurs lignes
+* Lire plusieurs lignes
 
 ```php
 $raws = $sth->fetchAll();
 ```
 
-#### Personnaliser le mode de lecture
+* Personnaliser le mode de lecture
 
 ```php
 $sth->setFetchMode(PDO::FETCH::ASSOC);

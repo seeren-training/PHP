@@ -5,23 +5,27 @@
 *  🔖 **Destroy**
 *  🔖 **Configuration**
 
-> Notre objectif sur ce chapitre est de comprendre le mécanisme des sessions.
-
-![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/session.gif)
-
 ___
 
 ## 📑 [Définition](https://www.php.net/manual/fr/reserved.variables.session.php)
 
+> Notre objectif sur ce chapitre est de comprendre le mécanisme des sessions.
+
+
  Les sessions sont un moyen simple de stocker des données individuelles pour chaque utilisateur en utilisant un identifiant de session unique. Elles peuvent être utilisées pour faire persister des informations entre plusieurs pages. Les identifiants de session sont normalement envoyés au navigateur via des cookies de session, et l'identifiant est utilisé pour récupérer les données existantes de la session. L'absence d'un identifiant ou d'un cookie de session indique à PHP de créer une nouvelle session, et génère ainsi un nouvel identifiant de session. 
+
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/session.gif)
 
 ### 🏷️ **Mécanisme**
 
 En PHP il faudra démarrer la session, à ce moment il y a deux possibilités. 
-* Si le client n'est jamais venu, 
-    * PHP génère un identifiant de session unique pour le client et créé un fichier dans le dossier temporaire du serveur afin de stocker ses données. Les données que l'on voudra personnelle à l'utilisateur devront être affectée à la super globale $_SESSION. PHP ajoute aux entêtes de réponse un header setCookie avec l'identifiant de session afin que le navigateur enregistre ce cookie en mémoire.
+* Si le client n'est jamais venu
+
+PHP génère un identifiant de session unique pour le client et créé un fichier dans le dossier temporaire du serveur afin de stocker ses données. Les données que l'on voudra personnelle à l'utilisateur devront être affectée à la super globale $_SESSION. PHP ajoute aux entêtes de réponse un header setCookie avec l'identifiant de session afin que le navigateur enregistre ce cookie en mémoire.
+
 * Sinon,
-    * Un cookie existe chez le client et il envoie ce cookie dans les entêtes de la requête. Le serveur intercepte le cookie, ouvre le fichier de session de l'utilisateur avec l'identifiant de session stocké dans le cookie et peuple la super globale $_SESSION des informations dans le fichier.
+
+Un cookie existe chez le client et il envoie ce cookie dans les entêtes de la requête. Le serveur intercepte le cookie, ouvre le fichier de session de l'utilisateur avec l'identifiant de session stocké dans le cookie et peuple la super globale $_SESSION des informations dans le fichier.
 
 ### 🏷️ **State**
 
@@ -157,5 +161,3 @@ ___
 👨🏻‍💻 Manipulation
 
 Configurer votre session correctement.
-
-Refactoring: utilisez un service pour gérer votre session

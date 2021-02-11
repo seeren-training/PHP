@@ -5,15 +5,15 @@
 
 ___
 
-![images](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/xss.png)
 
 ## 📑 [Définition](https://www.php.net/manual/fr/language.variables.superglobals.php)
 
+
 Le cross-site scripting (abrégé XSS) est un type de faille de sécurité des sites web permettant d'injecter du contenu dans une page, provoquant ainsi des actions sur les navigateurs web visitant la page.
 
-Il y a 3 catégories d'injection XSS possibles, reflected, stored, DOM Based.
+![images](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/xss.png)
 
-La troisième utilise le fragment de l'URL qui n'est pas envoyé à PHP et ne nou concerne pas. En revanche le deux premières nous intéressent.
+Il y a 3 catégories d'injection XSS possibles, reflected, stored, DOM Based. La troisième utilise le fragment de l'URL qui n'est pas envoyé à PHP et ne nous concerne pas. En revanche le deux premières nous intéressent.
 
 ### 🏷️ **Reflected**
 
@@ -29,7 +29,7 @@ Et si cette donnée est affichée par notre programme sans être sécurisée:
 echo filter_input(INPUT_GET, "name");
 ```
 
-Alors il y a un problème concernant la sécurité es données de l'utilisateur qui affiche cette page. En effet JavaScript a la capacité d'enregistrer des évènements pour capturer la saisie utilisateur, la capacité de vider le stockage local du navigateur et d'envoyer ces informations à un serveur pour qu'elles soient stockées.
+Alors il y a un problème concernant la sécurité des données de l'utilisateur qui affiche cette page. En effet JavaScript a la capacité d'enregistrer des évènements pour capturer la saisie utilisateur, la capacité de vider le stockage local du navigateur et d'envoyer ces informations à un serveur pour qu'elles soient stockées.
 
 ### 🏷️ **Stored**
 

@@ -10,16 +10,15 @@ ___
 
 ## 📑 Historique
 
-PHP est un "langage de programmation" libre, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP a permis de créer un grand nombre de sites web célèbres, comme Facebook et Wikipédia. Il est considéré comme une des bases de la création de sites web dits dynamiques mais également des applications web. 
+PHP est un "langage de programmation" `libre`, principalement utilisé pour produire des pages Web dynamiques via un serveur HTTP, mais pouvant également fonctionner comme n'importe quel langage interprété de façon locale. PHP a permis de créer un grand nombre de sites web célèbres, comme Facebook et Wikipédia. Il est considéré comme une des bases de la création de sites web dits dynamiques mais également des applications web. 
 
 > I don't know how to stop it, there was never any intent to write a programming language.
 
-* **1994**:  Rasmus Lerdorf release PHP 1 - Personal Home Page.
-
-* **1997**: Zeev Suraski et Andi Gutmans release PHP3 - Hypertext Preprocessor.
-* **2000**: PHP 4, powered by the Zend Engine 1.0 introduit le mot class.
-* **2004**: PHP 5, powered by the Zend Engine 2.0, le model objet gagne en maturité.
-* **2015**: PHP 7, powered by the Zend Engine 3.0, les performance sont améliorés et le typage est renforcé.
+* 1994:  Rasmus Lerdorf release PHP 1 - Personal Home Page.
+* 1997: Zeev Suraski et Andi Gutmans release PHP3 - Hypertext Preprocessor.
+* 2000: PHP 4, powered by the Zend Engine 1.0 introduit le mot class.
+* 2004: PHP 5, powered by the Zend Engine 2.0, le model objet gagne en maturité.
+* 2015: PHP 7, powered by the Zend Engine 3.0, les performance sont améliorés et le typage est renforcé.
 
 ![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/history.png)
 
@@ -42,9 +41,9 @@ PHP est un langage Back End. Il est alors interprété par sur un serveur et il 
 
 En fonction de votre environnement, il existe des serveur avec **A**pache/**M**ySQL/**P**HP/**P**HPMyadmin.
 
-* [xampp](https://www.apachefriends.org/fr/index.html)
-* [wampp](https://www.wampserver.com/)
-* [mamp](https://www.mamp.info/en/downloads/)
+[Xampp](https://www.apachefriends.org/fr/index.html)
+[Wamp](https://www.wampserver.com/)
+[Mamp](https://www.mamp.info/en/downloads/)
 
 ___
 
@@ -81,16 +80,19 @@ ___
 
 ## 📑 Manager
 
-La question à se poser quand vous commencer un nouveau langage c'est: quel est son package manager?
+La question à se poser quand vous commencer un nouveau langage c'est: quel est son `package manager`?
 
 > Il sera utile pour installer des dépendances comme une librairie, un framework, pour initialiser un projet afin que sa version de PHP soit explicite ou encore  pour charger vos classes...
 
 
 ### 🏷️ **[Composer](https://getcomposer.org/)**
 
-Composer est le package manager pour écosystème PHP, les package installables reposent sur le site associé [packagist](https://packagist.org/).
+Composer est le package manager pour écosystème PHP, les package installables reposent sur le site associé packagist.
+
+[Packagist](https://packagist.org/).
 
 ![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/composer.png)
+
 ___
 
 👨🏻‍💻 Manipulation

@@ -55,7 +55,7 @@ ${$foo} = "bazd";
 echo $bar; // baz
 ```
 
-Ceci peut être pratique quand vous chainer des interprétations de valeur, comme construire un objet à partir d'un identifiant dynamique stocké sur attribut identifié dynamiquement. Nous en aurons l'utilisé un jour.
+Ceci peut être pratique quand vous chainer des interprétations de valeur, comme construire un objet à partir d'un identifiant dynamique stocké. Nous en aurons l'utilité un jour.
 
 ### 🏷️ **Référence**
 
@@ -98,7 +98,7 @@ var_dump(null);
 
 ### 🏷️ **Primitifs**
 
-* Booléen
+* Boolean
 
 ```php
 var_dump(true);
@@ -153,7 +153,7 @@ Les tableaux  ne sont pas dimensionnés et pas typés.
 
 ### 🏷️ **[Déclaration](https://www.php.net/manual/fr/function.array.php)**
 
-Il est possible de déclarer un tableau en utilisant le fonction `array`
+Il est possible de déclarer un tableau en utilisant la fonction `array`
 
 ```php
 $foo = array();
@@ -246,7 +246,7 @@ ___
 
 Loin d’apprendre la programmation objet maintenant, penchons nous sur ce type.
 
-![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/object.jpg)
+![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/object.png)
 
 Tous les objets possèdent une valeur qui est modifiée par référence: quand vous passerez un objet en argument et que vous le modifiez, vous ne modifiez pas une copie comme pour les types primitifs, il sera modifié dans le contexte d'appel.
 

@@ -7,13 +7,12 @@
 
 ___
 
-![images](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/superglobals.png)
 
 ## 📑 [Définition](https://www.php.net/manual/fr/language.variables.superglobals.php)
 
-Les Superglobales sont des variables internes qui sont toujours disponibles, quel que soit le contexte.
+![images](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/superglobals.png)
 
-Plusieurs variables prédéfinies en PHP sont "superglobales", ce qui signifie qu'elles sont disponibles quel que soit le contexte du script. Il est inutile de faire global $variable; avant d'y accéder dans les fonctions ou les méthodes.
+Les Superglobales sont des variables internes qui sont toujours disponibles, quel que soit le contexte. Plusieurs variables prédéfinies en PHP sont "superglobales", ce qui signifie qu'elles sont disponibles quel que soit le contexte du script. Il est inutile de faire global $variable; avant d'y accéder dans les fonctions ou les méthodes.
 
 > Il existe plusieurs super globales par thématique, nous observerons certaines de ces variables dans ce chapitre.
 
@@ -39,7 +38,7 @@ $_SERVER = null;
 
 Mais ce sont pourtant des valeurs que nous souhaitons comme constante pour ne pas être induit en erreur.
 
-Le second problème est la vérification à faire avant d'accéder à un élément du tableau pour ne pas risquer de se prendre un warning.
+Le second problème est la vérification à faire avant d'accéder à un élément du tableau pour ne pas risquer de se prendre une notice.
 
 ```php
 if (array_key_exists("REMOTE_ADDR", $_SERVER)) {
@@ -47,7 +46,7 @@ if (array_key_exists("REMOTE_ADDR", $_SERVER)) {
 }
 ```
 
-De ce fait accéder directement à une super globale est une mauvaise pratique.
+> Accéder directement à une super globale est une mauvaise pratique.
 
 ### 🏷️ **Filter input**
 
@@ -71,9 +70,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-Relevez les variables utiles pour représenter l'url. Nous souhaitons la partie d'url qui ne comporte pas le host et le port. Relever les variables en fonction de votre contexte d’exécution.
-
-Vous pouvez alors multiplier vos page: **utiliser cette variable et la structure conditionnelle pour passer par un controller ou un autre** en fonction de la valeur de cette variable. Par exemple l'url "/products" affiche une liste de produits alors que "contact" affiche un formulaire de contact. **Gérer le cas de page non trouvée**.
+Relevez les variables utiles pour représenter l'url. Nous souhaitons la partie d'url qui ne comporte pas le host et le port. Relever les variables en fonction de votre contexte d’exécution. Vous pouvez alors multiplier vos page: **utiliser cette variable et la structure conditionnelle pour passer par un controller ou un autre** en fonction de la valeur de cette variable. Par exemple l'url "/products" affiche une liste de produits alors que "contact" affiche un formulaire de contact. **Gérez le cas de page non trouvée**.
 
 ___
 
@@ -100,7 +97,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-**Fournissez un lien vers l'affichage d'un item unitaire** d'une liste. Par exemple `/products?id=1` doit afficher un produit de la liste des produits.
+Fournissez un lien vers l'affichage d'un item unitaire d'une liste. Par exemple `/products?id=1` doit afficher un produit de la liste des produits.
 
 ___
 
@@ -139,9 +136,4 @@ ___
 
 👨🏻‍💻 Manipulation
 
-**Créez un formulaire pour créer une entité**, un produit, un commentaire par exemple, à adapter selon votre thématique.
-
-Attention, vous devez procéder à certains tests logiques, si le formulaire n'est pas correctement formulé, vous devez **gérer l'affichage des erreurs**. Vous pouvez utiliser filter_input pour valider votre donnée!
-
-Refactoring: **les services permettent de stocker la logique métie**r, utiliser un service et une fonction dans ce service pour déplacer la logique métier (la validation du formulaire).
-
+Créez un formulaire pour créer une entité, un produit, un commentaire par exemple, à adapter selon votre thématique. Attention, vous devez procéder à certains tests logiques, si le formulaire n'est pas correctement formulé, vous devez **gérer l'affichage des erreurs**. Vous pouvez utiliser filter_input pour valider votre donnée! Refactoring: **les services permettent de stocker la logique métier**, utiliser un service et une fonction dans ce service pour déplacer la logique métier (la validation du formulaire).

@@ -62,15 +62,15 @@ ___
 
 ### 🏷️ **Built in**
 
-PHP dispose d'un [Built in server](https://www.php.net/manual/en/features.commandline.webserver.php), il est utile pour développer. Vous n'êtes pas obligés d'avoir vos scripts dans le dossier public de votre serveur.
+PHP dispose d'un `Built in server`, il est utile pour développer. Vous n'êtes pas obligés d'avoir vos scripts dans le dossier public de votre serveur.
 
-Pour démarrer le server, utilisez la commande suivante dans un terminal situé à l'emplacement de votre script.
+* Pour démarrer le server, utilisez la commande suivante dans un terminal situé à l'emplacement de votre script.
 
 ```bash
 php -S localhost:8000
 ```
 
-Si vous souhaitez exécuter un script situé dans un autre dossier il faut utiliser l'option target.
+* Si vous souhaitez exécuter un script situé dans un autre dossier il faut utiliser l'option target.
 
 ```bash
 php -S localhost:8000 -t my-directory
@@ -114,7 +114,7 @@ Comme vous le constatez il n'est pas possible par défaut d'obtenir des url pers
 
 Pour ce faire nous allons dans un fichier donner des directive au server apache. Le fichier .htaccess contient ces directives.
 
-*.htaccess*
+* .htaccess
 
 ```bash
 # Deny access to the .htaccess file and will trigger a 403 status code
@@ -177,7 +177,7 @@ ___
 
 ### 🏷️ **Structure**
 
-Bien que nous soyons en procédural, nous suivrons comme [organisation de projet](https://symfony.com/doc/current/best_practices.html#use-the-default-directory-structure) celle du cadre applicatif Symfony qui sera étudié plus tard en prenant quelques libertés.
+Bien que nous soyons en procédural, nous suivrons comme organisation de projet celle du cadre applicatif Symfony qui sera étudié plus tard en prenant quelques libertés.
 
 ![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/folder.png)
 
@@ -191,10 +191,10 @@ project-name/
 │   └─ index.php
 |
 ├─ src/
-│   ├─ controller/
-│   ├─ entity/
-│   ├─ repository/
-│   └─ services/
+│   ├─ Controller/
+│   ├─ Entity/
+│   ├─ Repository/
+│   └─ Service/
 |
 ├─ templates/
 |
@@ -209,5 +209,3 @@ ___
 👨🏻‍💻 Manipulation
 
 Créez la structure de votre projet.
-
-___
