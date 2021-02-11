@@ -19,11 +19,12 @@ ___
 ### 🏷️ **Mécanisme**
 
 En PHP il faudra démarrer la session, à ce moment il y a deux possibilités. 
+
 * Si le client n'est jamais venu
 
 PHP génère un identifiant de session unique pour le client et créé un fichier dans le dossier temporaire du serveur afin de stocker ses données. Les données que l'on voudra personnelle à l'utilisateur devront être affectée à la super globale $_SESSION. PHP ajoute aux entêtes de réponse un header setCookie avec l'identifiant de session afin que le navigateur enregistre ce cookie en mémoire.
 
-* Sinon,
+* Sinon
 
 Un cookie existe chez le client et il envoie ce cookie dans les entêtes de la requête. Le serveur intercepte le cookie, ouvre le fichier de session de l'utilisateur avec l'identifiant de session stocké dans le cookie et peuple la super globale $_SESSION des informations dans le fichier.
 

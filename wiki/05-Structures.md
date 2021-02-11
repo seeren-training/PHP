@@ -401,7 +401,7 @@ ___
 
 👨🏻‍💻 Manipulation
 
-**Vous devez afficher une page web en utilisant une fonction d'un controller, qui associe le model et la vue.**
+Vous devez afficher une page web en utilisant une fonction d'un controller, qui associe le model et la vue.
 
 * Controllers
 

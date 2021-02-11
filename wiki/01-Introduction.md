@@ -89,7 +89,7 @@ La question à se poser quand vous commencer un nouveau langage c'est: quel est 
 
 Composer est le package manager pour écosystème PHP, les package installables reposent sur le site associé packagist.
 
-[Packagist](https://packagist.org/).
+[Packagist](https://packagist.org/)
 
 ![image](https://raw.githubusercontent.com/seeren-training/PHP/master/wiki/resources/composer.png)
 
