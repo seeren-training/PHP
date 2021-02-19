@@ -1,4 +1,4 @@
-# PHP
+# PHP - Création de pages Web dynamiques
 
 ## Durée
 
