@@ -1,0 +1,10 @@
+{
+    "name": "cyril/my-links",
+    "authors": [
+        {
+            "name": "seeren",
+            "email": "consultant@seeren.fr"
+        }
+    ],
+    "require": {}
+}
