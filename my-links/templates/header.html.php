@@ -8,18 +8,12 @@
     <link rel="stylesheet" type="text/css"
           href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <style>
-        body {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
-        }
-
         main {
             flex: 1 0 auto;
         }
     </style>
 </head>
-<body>
+<body class="d-flex min-vh-100 flex-column">
 <header>
     <?php include '../templates/navbar.html.php' ?>
 </header>

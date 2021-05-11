@@ -1,6 +1,6 @@
 <?php
 
-$title = "SignIN";
+$title = "SignIn";
 
 include '../templates/header.html.php';
 
@@ -34,7 +34,7 @@ if ("" === $form["password"]["value"]) {
     <form class="row col-12 offset-md-2 col-md-8 col-lg-6 offset-lg-3 mt-5"
           method="post" action="">
         <h1>
-            SignIn
+            <?= $title ?>
         </h1>
         <div class="mt-5">
             <div class="mb-3">

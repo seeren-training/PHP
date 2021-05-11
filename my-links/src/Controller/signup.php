@@ -1,6 +1,6 @@
 <?php
 
-$title = "Sign UP";
+$title = "SignUP";
 
 include '../templates/header.html.php';
 
@@ -19,6 +19,8 @@ $form = [
     ],
 ];
 
+$valid = null;
+
 if ("" === $form["email"]["value"]) {
     $form["email"]["error"] = "Email requis";
 } elseif ($form["email"]["value"]
@@ -35,13 +37,36 @@ if ($form["confirm"]["value"] !== $form["password"]["value"]) {
     $form["confirm"]["error"] = "Confirme doit correspondre au mot de passe";
 }
 
+$filename = './../vars/' . md5($form["email"]["value"]) . '.json';
+
+$fileExists = is_file($filename);
+
+if (null === $form["email"]["error"]
+    && null === $form["password"]["error"]
+    && null === $form["confirm"]["error"]
+    && null !== $form["email"]["value"]
+    && null !== $form["password"]["value"]
+    && null !== $form["confirm"]["value"]
+    && false === $fileExists ) {
+    $user = [
+        "id" => null,
+        "email" => $form["email"]["value"],
+        "password" => $form["password"]["value"],
+        "favorites" => [],
+    ];
+    file_put_contents($filename, json_encode($user));
+} else if (true === $fileExists) {
+    $form["email"]["error"] = "Email already exists";
+}
+
+
 ?>
 
 <main class="container">
     <form class="row col-12 offset-md-2 col-md-8 col-lg-6 offset-lg-3 mt-5"
           method="post" action="">
         <h1>
-            SignUp
+            <?= $title ?>
         </h1>
         <div class="mt-5">
             <div class="mb-3">
