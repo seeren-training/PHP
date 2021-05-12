@@ -28,6 +28,23 @@ if ("" === $form["password"]["value"]) {
     $form["password"]["error"] = "Password minimum 6";
 }
 
+if (null === $form["email"]["error"]
+    && null === $form["password"]["error"]
+    && null !== $form["email"]["value"]
+    && null !== $form["password"]["value"]) {
+    $filename = './../vars/' . md5($form["email"]["value"]) . '.json';
+    if (!is_file($filename)) {
+        $form["email"]["error"] = "User email do not exists";
+    } else {
+        $user = json_decode(file_get_contents($filename), true);
+        if (password_verify($form["password"]["value"],  $user["password"])) {
+            header("Location: /");
+            exit;
+        }
+        $form["password"]["error"] = "Informations incorrectes";
+    }
+}
+
 ?>
 
 <main class="container">
@@ -58,7 +75,8 @@ if ("" === $form["password"]["value"]) {
                     <div class="text-danger"><?= $form["password"]["error"] ?></div>
                 <?php endif ?>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit"  class="btn
+            btn-primary">Submit</button>
         </div>
     </form>
 

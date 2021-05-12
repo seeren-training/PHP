@@ -6,5 +6,7 @@
             "email": "consultant@seeren.fr"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-json": "*"
+    }
 }
