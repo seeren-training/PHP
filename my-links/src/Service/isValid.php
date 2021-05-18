@@ -1,6 +1,6 @@
 <?php
 
-function isValid(array &$form): bool
+function isValid(array &$form, $confirm = true): bool
 {
     if ("" === $form["email"]["value"]) {
         $form["email"]["error"] = "Email requis";
@@ -14,7 +14,8 @@ function isValid(array &$form): bool
         && 6 > strlen($form["password"]["value"])) {
         $form["password"]["error"] = "Password minimum 6";
     }
-    if ($form["confirm"]["value"] !== $form["password"]["value"]) {
+    if ($confirm && $form["confirm"]["value"] !==
+        $form["password"]["value"]) {
         $form["confirm"]["error"] = "Confirm doit correspondre au mot de passe";
     }
     foreach ($form as $value) {

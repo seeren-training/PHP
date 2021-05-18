@@ -1,7 +1,16 @@
 <?php
 
 return [
-    "/" => "home.php",
-    "/signup" => "signup.php",
-    "/signin" => "signin.php",
+    "/" => [
+        "controller" => "home.php",
+        "action" => "home"
+    ],
+    "/signup" => [
+        "controller" => "signup.php",
+        "action" => "signup"
+    ],
+    "/signin" => [
+        "controller" => "signin.php",
+        "action" => "signin"
+    ],
 ];

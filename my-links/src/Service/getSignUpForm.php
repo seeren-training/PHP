@@ -1,8 +1,8 @@
 <?php
 
-function getSignUpForm (): array
+function getSignUpForm ($confirm = true): array
 {
-    return [
+    $form =  [
         "email" => [
             "value" => filter_input(INPUT_POST, "email"),
             "error" => null
@@ -10,10 +10,13 @@ function getSignUpForm (): array
         "password" => [
             "value" => filter_input(INPUT_POST, "password"),
             "error" => null
-        ],
-        "confirm" => [
+        ]
+    ];
+    if ($confirm) {
+        $form["confirm"] = [
             "value" => filter_input(INPUT_POST, "confirm"),
             "error" => null
-        ],
-    ];;
+        ];
+    }
+    return $form;
 }

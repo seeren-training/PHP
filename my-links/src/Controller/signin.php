@@ -1,85 +1,20 @@
 <?php
 
-$title = "SignIn";
+include '../src/Service/getSignUpForm.php';
+include '../src/Service/isSubmitted.php';
+include '../src/Service/isValid.php';
+include '../src/Service/isUser.php';
 
-include '../templates/header.html.php';
-
-$form = [
-    "email" => [
-        "value" => filter_input(INPUT_POST, "email"),
-        "error" => null
-    ],
-    "password" => [
-        "value" => filter_input(INPUT_POST, "password"),
-        "error" => null
-    ],
-];
-
-if ("" === $form["email"]["value"]) {
-    $form["email"]["error"] = "Email requis";
-} elseif ($form["email"]["value"]
-    && !filter_var($form["email"]["value"], FILTER_VALIDATE_EMAIL)) {
-    $form["email"]["error"] = "Email invalid";
-}
-if ("" === $form["password"]["value"]) {
-    $form["password"]["error"] = "Password requis";
-} elseif ($form["password"]["value"]
-    && 6 > strlen($form["password"]["value"])) {
-    $form["password"]["error"] = "Password minimum 6";
-}
-
-if (null === $form["email"]["error"]
-    && null === $form["password"]["error"]
-    && null !== $form["email"]["value"]
-    && null !== $form["password"]["value"]) {
-    $filename = './../vars/' . md5($form["email"]["value"]) . '.json';
-    if (!is_file($filename)) {
-        $form["email"]["error"] = "User email do not exists";
-    } else {
-        $user = json_decode(file_get_contents($filename), true);
-        if (password_verify($form["password"]["value"],  $user["password"])) {
+function signin()
+{
+    $title = "SignIn";
+    $form = getSignUpForm(false);
+    if (isSubmitted($form) && isValid($form, false)) {
+        if (isUser($form["email"]["value"], $form["password"]["value"])) {
             header("Location: /");
             exit;
         }
-        $form["password"]["error"] = "Informations incorrectes";
+        $form["email"]["error"] = "Bad credentials";
     }
+    include '../templates/signin/signin.html.php';
 }
-
-?>
-
-<main class="container">
-    <form class="row col-12 offset-md-2 col-md-8 col-lg-6 offset-lg-3 mt-5"
-          method="post" action="">
-        <h1>
-            <?= $title ?>
-        </h1>
-        <div class="mt-5">
-            <div class="mb-3">
-                <label for="email" class="form-label">Email address</label>
-                <input value="<?= filter_var($form["email"]["value"],
-                    FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?>"
-                       class="form-control"
-                       id="email"
-                       aria-describedby="emailHelp" name="email">
-                <?php if ($form["email"]["error"]): ?>
-                    <div class="text-danger"><?= $form["email"]["error"] ?></div>
-                <?php endif ?>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input value="<?= filter_var($form["password"]["value"],
-                    FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?>"
-                       type="password" class="form-control" id="password"
-                       name="password">
-                <?php if ($form["password"]["error"]): ?>
-                    <div class="text-danger"><?= $form["password"]["error"] ?></div>
-                <?php endif ?>
-            </div>
-            <button type="submit"  class="btn
-            btn-primary">Submit</button>
-        </div>
-    </form>
-
-</main>
-
-<?php include '../templates/footer.html.php' ?>
