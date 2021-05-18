@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title><?= $title ?></title>
     <link rel="stylesheet" type="text/css"
-          href="./node_modules/bootstrap/dist/css/bootstrap.css">
+          href="/node_modules/bootstrap/dist/css/bootstrap.css">
     <style>
         main {
             flex: 1 0 auto;

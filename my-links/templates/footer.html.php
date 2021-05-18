@@ -5,6 +5,6 @@
 </footer>
 
 <script type="text/javascript"
-        src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+        src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>

@@ -1,53 +1,20 @@
 <?php
 
+include '../src/Service/saveUser.php';
+include '../src/Service/getSignUpForm.php';
+include '../src/Service/isSubmitted.php';
+include '../src/Service/isValid.php';
+
 $title = "SignUP";
-$form = [
-    "email" => [
-        "value" => filter_input(INPUT_POST, "email"),
-        "error" => null
-    ],
-    "password" => [
-        "value" => filter_input(INPUT_POST, "password"),
-        "error" => null
-    ],
-    "confirm" => [
-        "value" => filter_input(INPUT_POST, "confirm"),
-        "error" => null
-    ],
-];
-
-if ("" === $form["email"]["value"]) {
-    $form["email"]["error"] = "Email requis";
-} elseif ($form["email"]["value"]
-    && !filter_var($form["email"]["value"], FILTER_VALIDATE_EMAIL)) {
-    $form["email"]["error"] = "Email invalid";
-}
-if ("" === $form["password"]["value"]) {
-    $form["password"]["error"] = "Password requis";
-} elseif ($form["password"]["value"]
-    && 6 > strlen($form["password"]["value"])) {
-    $form["password"]["error"] = "Password minimum 6";
-}
-if ($form["confirm"]["value"] !== $form["password"]["value"]) {
-    $form["confirm"]["error"] = "Confirm doit correspondre au mot de passe";
-}
-
-if (null === $form["email"]["error"]
-    && null === $form["password"]["error"]
-    && null === $form["confirm"]["error"]
-    && null !== $form["email"]["value"]
-    && null !== $form["password"]["value"]
-    && null !== $form["confirm"]["value"]) {
+$form = getSignUpForm();
+if (isSubmitted($form) && isValid($form)) {
     $filename = './../vars/' . md5($form["email"]["value"]) . '.json';
-    $fileExists = is_file($filename);
-    if (false === $fileExists) {
-        $user = [
-            "id" => null,
-            "email" => $form["email"]["value"],
-            "password" => password_hash($form["password"]["value"], PASSWORD_DEFAULT),
-            "favorites" => [],
-        ];
-        file_put_contents($filename, json_encode($user));
+    if (!is_file($filename)) {
+        saveUser(
+            $form["email"]["value"],
+            $form["password"]["value"],
+            $filename
+        );
         header("Location: /signin");
         exit;
     }
