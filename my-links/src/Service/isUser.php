@@ -7,5 +7,9 @@ function isUser(string $email, string $password): bool
         return false;
     }
     $user = json_decode(file_get_contents($filename), true);
-    return password_verify($password, $user["password"]);
+    if (password_verify($password, $user["password"])) {
+        $_SESSION["user"] = $user;
+        return true;
+    }
+    return false;
 }

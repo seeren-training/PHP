@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $routeList = require './../config/routes.php';
 $url = filter_input(INPUT_SERVER, "PATH_INFO");
 

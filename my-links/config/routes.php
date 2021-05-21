@@ -13,4 +13,12 @@ return [
         "controller" => "signin.php",
         "action" => "signin"
     ],
+    "/logout" => [
+        "controller" => "logout.php",
+        "action" => "logout"
+    ],
+    "/favorite/add" => [
+        "controller" => "addFavorite.php",
+        "action" => "addFavorite"
+    ],
 ];

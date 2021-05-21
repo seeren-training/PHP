@@ -7,6 +7,8 @@
     <title><?= $title ?></title>
     <link rel="stylesheet" type="text/css"
           href="/node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css"
+          href="/node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <style>
         main {
             flex: 1 0 auto;
@@ -14,6 +16,7 @@
     </style>
 </head>
 <body class="d-flex min-vh-100 flex-column">
+
 <header>
     <?php include '../templates/navbar.html.php' ?>
 </header>

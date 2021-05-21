@@ -7,6 +7,10 @@ include '../src/Service/isUser.php';
 
 function signin()
 {
+    if (array_key_exists("user", $_SESSION)) {
+        header("Location: /");
+        exit;
+    }
     $title = "SignIn";
     $form = getSignUpForm(false);
     if (isSubmitted($form) && isValid($form, false)) {

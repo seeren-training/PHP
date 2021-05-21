@@ -1,53 +1,34 @@
 <?php
 
-$title = "My Link";
-include '../templates/header.html.php';
+include '../src/Service/saveUser.php';
 
-$linkList = [
-    [
-        'text' => "Home seeren-trainning/JavaScript Wiki",
-        'href' => "https://github.com/seeren-training/JavaScript/wiki",
-        'contentType' => "text/html",
-        'favicon' => "https://github.com/favicon.ico",
-        'preview' => null,
-        'commentList' => [],
-    ],
-    [
-        'text' => "Home seeren-trainning/PHP Wiki",
-        'href' => "https://github.com/seeren-training/PHP/wiki",
-        'contentType' => "text/html",
-        'favicon' => "https://github.com/favicon.ico",
-        'preview' => null,
-        'commentList' => [],
-    ],
-    [
-        'text' => "Home seeren-trainning/PHP Object Wiki",
-        'href' => "https://github.com/seeren-training/PHP-Object/wiki",
-        'contentType' => "text/html",
-        'favicon' => "https://github.com/favicon.ico",
-        'preview' => null,
-        'commentList' => [],
-    ],
-];
-
-?>
-
-<main>
-    <div>
-        <ul>
-            <?php foreach ($linkList as $link): ?>
-
-                <li>
-                    <a href="<?= $link['href'] ?>" target="_blank">
-                        <img src="<?= $link['favicon'] ?>"/>
-                        <?= $link['text'] ?>
-                    </a>
-                </li>
-
-            <?php endforeach ?>
-        </ul>
-    </div>
-
-</main>
-
-<?php include '../templates/footer.html.php' ?>
+function home()
+{
+    if (!array_key_exists("user", $_SESSION)) {
+        header("Location: /signin");
+        exit;
+    }
+    $title = "My Link";
+    $favorite = filter_input(INPUT_POST, "favorite");
+    $favoriteError = null;
+    if (null !== $favorite) {
+        if (!filter_var($favorite, FILTER_VALIDATE_URL)) {
+            $favoriteError = "Enter a valid URL";
+        } else {
+            $userFavorite = [
+                "href" => $favorite,
+                "text" => "???",
+                "favicon" => "???",
+            ];
+            array_push($_SESSION["user"]["favorites"], $userFavorite);
+            saveUser(
+                $_SESSION["user"]["email"],
+                $_SESSION["user"]["password"],
+                $_SESSION["user"]["favorites"]
+            );
+            header("Location: /");
+            exit;
+        }
+    }
+    include '../templates/home/home.html.php';
+}

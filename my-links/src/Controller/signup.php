@@ -7,6 +7,10 @@ include '../src/Service/saveUser.php';
 
 function signup()
 {
+    if (array_key_exists("user", $_SESSION)) {
+        header("Location: /");
+        exit;
+    }
     $title = "SignUP";
     $form = getSignUpForm();
     if (isSubmitted($form) && isValid($form)) {
@@ -15,6 +19,8 @@ function signup()
             saveUser(
                 $form["email"]["value"],
                 $form["password"]["value"],
+                [],
+                true,
                 $filename
             );
             header("Location: /signin");

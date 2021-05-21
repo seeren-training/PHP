@@ -14,23 +14,19 @@
                     <a class="nav-link active" aria-current="page"
                        href="/">Links</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link btn" href="/signup">SignUp</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn" href="/signin">SignIn</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn" href="/logout">Logout</a>
-                </li>
+                <?php if (array_key_exists("user", $_SESSION)): ?>
+                    <li class="nav-item">
+                        <a class="nav-link btn" href="/logout">Logout</a>
+                    </li>
+                <?php else: ?>
+                    <li class="nav-item">
+                        <a class="nav-link btn" href="/signup">SignUp</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn" href="/signin">SignIn</a>
+                    </li>
+                <?php endif ?>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search"
-                       placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">
-                    Search
-                </button>
-            </form>
         </div>
     </div>
 </nav>
