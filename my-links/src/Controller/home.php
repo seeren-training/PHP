@@ -1,34 +1,25 @@
 <?php
 
-include '../src/Service/saveUser.php';
+include "../src/Service/User/allowUser.php";
+include "../src/Service/Form/getForm.php";
+include '../src/Service/Form/isSubmitted.php';
+include '../src/Service/Form/isValid.php';
+include '../src/Service/Favorite/addFavorite.php';
+include '../src/Service/Favorite/deleteFavorite.php';
 
-function home()
+function home(): void
 {
-    if (!array_key_exists("user", $_SESSION)) {
-        header("Location: /signin");
+    allowUser(true);
+    $form = getForm(["favorite"]);
+    $href = filter_input(INPUT_GET, "favorite");
+    if (isSubmitted($form) && isValid($form)) {
+        addFavorite($form);
+        header("Location: /");
         exit;
-    }
-    $title = "My Link";
-    $favorite = filter_input(INPUT_POST, "favorite");
-    $favoriteError = null;
-    if (null !== $favorite) {
-        if (!filter_var($favorite, FILTER_VALIDATE_URL)) {
-            $favoriteError = "Enter a valid URL";
-        } else {
-            $userFavorite = [
-                "href" => $favorite,
-                "text" => "???",
-                "favicon" => "???",
-            ];
-            array_push($_SESSION["user"]["favorites"], $userFavorite);
-            saveUser(
-                $_SESSION["user"]["email"],
-                $_SESSION["user"]["password"],
-                $_SESSION["user"]["favorites"]
-            );
-            header("Location: /");
-            exit;
-        }
+    } elseif ($href) {
+        deleteFavorite($href);
+        header("Location: /");
+        exit;
     }
     include '../templates/home/home.html.php';
 }

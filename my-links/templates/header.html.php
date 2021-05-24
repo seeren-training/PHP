@@ -16,7 +16,6 @@
     </style>
 </head>
 <body class="d-flex min-vh-100 flex-column">
-
 <header>
     <?php include '../templates/navbar.html.php' ?>
 </header>

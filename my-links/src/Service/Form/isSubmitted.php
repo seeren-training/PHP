@@ -2,8 +2,8 @@
 
 function isSubmitted(array $form): bool
 {
-    foreach ($form as $value) {
-        if (null === $value["value"]) {
+    foreach ($form as $field) {
+        if (null === $field["value"]) {
             return false;
         }
     }
