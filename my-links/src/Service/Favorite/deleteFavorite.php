@@ -1,18 +1,15 @@
 <?php
 
-include_once '../src/Service/User/saveUser.php';
+include_once '../src/Database/getConnexion.php';
 
 function deleteFavorite(string $href): bool
 {
-    foreach ($_SESSION["user"]["favorites"] as $key => $value) {
-        if ($href === $value["href"]) {
-            array_splice($_SESSION["user"]["favorites"], $key, 1);
-            return saveUser(
-                $_SESSION["user"]["email"],
-                $_SESSION["user"]["password"],
-                $_SESSION["user"]["favorites"]
-            );
-        }
-    }
-    return false;
+    $dbh = getConnexion();
+    $sth = $dbh->prepare("
+        DELETE user_favorite, favorite
+        FROM user_favorite
+        JOIN favorite ON user_favorite.favorite_id = favorite.id
+        WHERE favorite.href = :href;");
+    $sth->execute([":href" => $href]);
+    return true;
 }

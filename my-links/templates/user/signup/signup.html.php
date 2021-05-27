@@ -22,7 +22,7 @@
                 <label for="password" class="form-label">Password</label>
                 <input value="<?= filter_var($form["password"]["value"],
                     FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?>"
-                       type="text" class="form-control" id="password"
+                       type="password" class="form-control" id="password"
                        name="password">
                 <?php if ($form["password"]["error"]): ?>
                     <div class="text-danger"><?= $form["password"]["error"] ?></div>

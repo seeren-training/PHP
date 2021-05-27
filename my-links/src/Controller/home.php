@@ -4,6 +4,7 @@ include "../src/Service/User/allowUser.php";
 include "../src/Service/Form/getForm.php";
 include '../src/Service/Form/isSubmitted.php';
 include '../src/Service/Form/isValid.php';
+include '../src/Service/Favorite/getFavorites.php';
 include '../src/Service/Favorite/addFavorite.php';
 include '../src/Service/Favorite/deleteFavorite.php';
 
@@ -16,10 +17,12 @@ function home(): void
         addFavorite($form);
         header("Location: /");
         exit;
-    } elseif ($href) {
+    }
+    if ($href) {
         deleteFavorite($href);
         header("Location: /");
         exit;
     }
+    $favorites = getFavorites();
     include '../templates/home/home.html.php';
 }

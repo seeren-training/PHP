@@ -20,7 +20,7 @@
     </div>
 </nav>
 <main class="container">
-    <?php if (0 === count($_SESSION["user"]["favorites"])) : ?>
+    <?php if (0 === count($favorites)) : ?>
         <div class="mt-4 text-center">
             <h1>You do not have favorite</h1>
             <p>Start by adding some favorite URL</p>
@@ -46,7 +46,7 @@
                     width: 100%;
                 }
             </style>
-            <?php foreach ($_SESSION["user"]["favorites"] as $key => $favorite) : ?>
+            <?php foreach ($favorites as $key => $favorite) : ?>
                 <div class="col-6 col-md-4 col-lg-3 mt-3 mb-3">
                     <div class="card h-100">
                         <div class="card-header">
@@ -60,7 +60,7 @@
                         <div class="card-body">
                             <p class="card-text">
                                 <?php if ($favorite["preview"]): ?>
-                                    <iframe width="560" height="315"
+                                    <iframe width="300" height="200"
                                             src="https://www.youtube.com/embed/<?=
                                             $favorite["preview"] ?>"
                                             title="YouTube video player"

@@ -1,6 +1,5 @@
 <?php
 
-
 include '../src/Database/getConnexion.php';
 
 function saveUser(
@@ -9,9 +8,7 @@ function saveUser(
 ): bool
 {
     $dbh = getConnexion();
-    $sth = $dbh->prepare("INSERT INTO `user` "
-        . "(`email`, `password`) "
-        . "VALUES (:email, :password)");
+    $sth = $dbh->prepare("INSERT INTO `user` (`email`, `password`) VALUES (:email, :password);");
     try {
         $sth->execute([
             ":email" => $email,

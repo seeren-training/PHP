@@ -1,37 +1,26 @@
 <?php
 
-include_once '../src/Service/User/saveUser.php';
+include_once '../src/Database/getConnexion.php';
+include '../src/Service/Favorite/buildFavorite.php';
 
 function addFavorite(array $form): bool
 {
-    $href = $form["favorite"]["value"];
-    $content = file_get_contents($href );
+    $content = file_get_contents($form["favorite"]["value"]);
     if ($content) {
-        $slashExplode = explode("/", $href );
-        $titleExplode = explode("<title>", $content);
-        $descriptionExplode = explode('description" content="', $content);
-        $host = $slashExplode[2];
-        $preview = null;
-        if ("www.youtube.com" === $host) {
-            $videoSplit = explode("watch?v=", $href );
-            if (1 < count($videoSplit)) {
-                $preview = explode("&", $videoSplit[1])[0];
-            }
-        }
-        $favorite = [
-            "host" => $host,
-            "href" => $href ,
-            "title" => explode("</title>", $titleExplode[1])[0],
-            "description" => explode('">', $descriptionExplode[1])[0],
-            "favicon" => $slashExplode[0] . "//" . $host . "/favicon.ico",
-            "preview" => $preview
-        ];
-        array_push($_SESSION["user"]["favorites"], $favorite);
-        return saveUser(
-            $_SESSION["user"]["email"],
-            $_SESSION["user"]["password"],
-            $_SESSION["user"]["favorites"]
-        );
+        $favorite = buildFavorite($form["favorite"]["value"], $content);
+        $dbh = getConnexion();
+        $sth = $dbh->prepare("INSERT INTO `favorite` (`href`, `title`, `description`) VALUES (:href, :title, :description)");
+        $sth->execute([
+            "href" => $favorite['href'],
+            "title" => $favorite['title'],
+            "description" => $favorite['description'],
+        ]);
+        $sth = $dbh->prepare("INSERT INTO `user_favorite` (`user_id`, `favorite_id`) VALUES (:user_id, :favorite_id)");
+        $sth->execute([
+            "user_id" => $_SESSION["user"]["id"],
+            "favorite_id" => $dbh->lastInsertId()
+        ]);
+        return true;
     }
     return false;
 }
