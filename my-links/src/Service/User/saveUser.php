@@ -1,22 +1,24 @@
 <?php
 
+
+include '../src/Database/getConnexion.php';
+
 function saveUser(
     string $email,
     string $password,
-    array $favorites = null,
 ): bool
 {
-    if (!$favorites) {
-        $password = password_hash($password, PASSWORD_DEFAULT);
-        $favorites = [];
+    $dbh = getConnexion();
+    $sth = $dbh->prepare("INSERT INTO `user` "
+        . "(`email`, `password`) "
+        . "VALUES (:email, :password)");
+    try {
+        $sth->execute([
+            ":email" => $email,
+            ":password" => password_hash($password, PASSWORD_DEFAULT)
+        ]);
+    } catch (PDOException $e) {
+        return false;
     }
-    if (file_put_contents("./../vars/" . md5($email) . ".json", json_encode([
-            "email" => $email,
-            "password" => $password,
-            "favorites" => $favorites,
-        ], JSON_PRETTY_PRINT)
-    )) {
-        return true;
-    }
-    return false;
+    return true;
 }

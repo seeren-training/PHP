@@ -11,7 +11,10 @@ function signup(): void
     allowUser(false);
     $form = getForm(["email", "password", "confirm"]);
     if (isSubmitted($form) && isValid($form)) {
-        if (saveUser($form["email"]["value"], $form["password"]["value"])) {
+        if (saveUser(
+            $form["email"]["value"],
+            $form["password"]["value"]
+        )) {
             header("Location: /signin");
             exit;
         }

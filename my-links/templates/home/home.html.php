@@ -44,7 +44,6 @@
 
                 iframe {
                     width: 100%;
-                    height: 100%;
                 }
             </style>
             <?php foreach ($_SESSION["user"]["favorites"] as $key => $favorite) : ?>
