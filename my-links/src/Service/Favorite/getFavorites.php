@@ -21,6 +21,9 @@ function getFavorites(): array
         $slashExplode = explode("/", $favorite["href"]);
         $host = $slashExplode[2];
         $favorite["favicon"] = $slashExplode[0] . "//" . $host . "/favicon.ico";
+
+
+
         $favorite["preview"] = buildPreview($host, $favorite["href"]);
     }
     return $favorites;

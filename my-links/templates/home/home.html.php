@@ -79,9 +79,8 @@
                                href="<?= $favorite["href"] ?>"
                                class="btn
                             btn-primary">Visit</a>
-                            <a href="/?favorite=<?= urlencode($favorite["href"])
-                            ?>"
-                               class="d-none text-secondary bi bi-trash mt-2
+                            <a href="/?favorite=<?= $favorite["id"]
+                            ?>" class="d-none text-secondary bi bi-trash mt-2
                                float-end"></a>
                         </div>
                     </div>

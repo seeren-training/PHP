@@ -12,14 +12,14 @@ function home(): void
 {
     allowUser(true);
     $form = getForm(["favorite"]);
-    $href = filter_input(INPUT_GET, "favorite");
+    $id = filter_input(INPUT_GET, "favorite");
     if (isSubmitted($form) && isValid($form)) {
         addFavorite($form);
         header("Location: /");
         exit;
     }
-    if ($href) {
-        deleteFavorite($href);
+    if ($id) {
+        deleteFavorite($id);
         header("Location: /");
         exit;
     }

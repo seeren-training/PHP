@@ -2,14 +2,10 @@
 
 include_once '../src/Database/getConnexion.php';
 
-function deleteFavorite(string $href): bool
+function deleteFavorite(int $id): bool
 {
     $dbh = getConnexion();
-    $sth = $dbh->prepare("
-        DELETE user_favorite, favorite
-        FROM user_favorite
-        JOIN favorite ON user_favorite.favorite_id = favorite.id
-        WHERE favorite.href = :href;");
-    $sth->execute([":href" => $href]);
+    $sth = $dbh->prepare("DELETE FROM user_favorite WHERE favorite_id = :id; DELETE FROM favorite WHERE id = :id;");
+    $sth->execute([":id" => $id]);
     return true;
 }
