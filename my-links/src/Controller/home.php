@@ -7,7 +7,6 @@ include '../src/Service/Form/isValid.php';
 include '../src/Service/Favorite/getFavorites.php';
 include '../src/Service/Favorite/addFavorite.php';
 include '../src/Service/Favorite/deleteFavorite.php';
-include_once "../src/Service/Core/exitUrl.php";
 
 function home(): void
 {
@@ -16,11 +15,13 @@ function home(): void
     $id = filter_input(INPUT_GET, "favorite");
     if (isSubmitted($form) && isValid($form)) {
         addFavorite($form);
-        exitUrl("/");
+        header("Location: /");
+        exit;
     }
     if ($id) {
         deleteFavorite($id);
-        exitUrl("/");
+        header("Location: /");
+        exit;
     }
     $favorites = getFavorites();
     include '../templates/home/home.html.php';

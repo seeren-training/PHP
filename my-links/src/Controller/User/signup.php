@@ -5,7 +5,6 @@ include '../src/Service/Form/isSubmitted.php';
 include '../src/Service/Form/isValid.php';
 include "../src/Service/User/allowUser.php";
 include '../src/Service/User/saveUser.php';
-include_once "../src/Service/Core/exitUrl.php";
 
 function signup(): void
 {
@@ -13,7 +12,8 @@ function signup(): void
     $form = getForm(["email", "password", "confirm"]);
     if (isSubmitted($form) && isValid($form)) {
         if (saveUser($form["email"]["value"], $form["password"]["value"])) {
-            exitUrl("/signin");
+            header("Location: /signin");
+            exit;
         }
         $form["email"]["error"] = "User already exists";
     }
