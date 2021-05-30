@@ -5,6 +5,7 @@ include '../src/Service/Form/isSubmitted.php';
 include '../src/Service/Form/isValid.php';
 include "../src/Service/User/allowUser.php";
 include '../src/Service/User/isUser.php';
+include_once "../src/Service/Core/exitUrl.php";
 
 function signin(): void
 {
@@ -12,8 +13,7 @@ function signin(): void
     $form = getForm(["email", "password"]);
     if (isSubmitted($form) && isValid($form)) {
         if (isUser($form["email"]["value"], $form["password"]["value"])) {
-            header("Location: /");
-            exit;
+            exitUrl("/");
         }
         $form["email"]["error"] = "Bad credentials";
     }

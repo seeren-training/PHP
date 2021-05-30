@@ -2,10 +2,7 @@
 
 include '../src/Database/getConnexion.php';
 
-function saveUser(
-    string $email,
-    string $password,
-): bool
+function saveUser(string $email, string $password): bool
 {
     $dbh = getConnexion();
     $sth = $dbh->prepare("INSERT INTO `user` (`email`, `password`) VALUES (:email, :password);");

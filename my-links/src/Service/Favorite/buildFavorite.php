@@ -11,7 +11,11 @@ function buildFavorite(string $href, string $content): array
     return [
         "host" => $host,
         "href" => $href,
-        "title" => explode("</title>", $titleExplode[1])[0],
+        "title" => substr(
+            explode("</title>", $titleExplode[1])[0],
+            0,
+            255
+        ),
         "description" => substr(
             explode('"', $descriptionExplode[1])[0],
             0,

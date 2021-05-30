@@ -15,4 +15,3 @@ foreach ($routeList as $path => $route) {
         $route['action']();
     }
 }
-
