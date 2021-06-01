@@ -14,6 +14,9 @@
                     <li class="nav-item">
                         <a class="nav-link btn" href="/logout">Logout</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn" href="/favorites">Favorites</a>
+                    </li>
                 <?php else: ?>
                     <li class="nav-item">
                         <a class="nav-link btn" href="/signup">Signup</a>

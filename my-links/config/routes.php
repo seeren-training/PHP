@@ -17,4 +17,8 @@ return [
         "controller" => "User/logout.php",
         "action" => "logout"
     ],
+    "/favorites" => [
+        "controller" => "Favorite/showFavorite.php",
+        "action" => "showFavorite",
+    ],
 ];
