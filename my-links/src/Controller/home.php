@@ -4,7 +4,7 @@ include "../src/Service/User/allowUser.php";
 include "../src/Service/Form/getForm.php";
 include '../src/Service/Form/isSubmitted.php';
 include '../src/Service/Form/isValid.php';
-include '../src/Service/Favorite/getFavorites.php';
+include '../src/Service/Favorite/getUserFavorites.php';
 include '../src/Service/Favorite/addFavorite.php';
 include '../src/Service/Favorite/deleteFavorite.php';
 include_once "../src/Service/Core/exitUrl.php";
@@ -22,6 +22,6 @@ function home(): void
         deleteFavorite($id);
         exitUrl("/");
     }
-    $favorites = getFavorites();
+    $favorites = getUserFavorites();
     include '../templates/home/home.html.php';
 }

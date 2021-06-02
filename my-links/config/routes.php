@@ -21,4 +21,16 @@ return [
         "controller" => "Favorite/showFavorite.php",
         "action" => "showFavorite",
     ],
+    "/api/favorites" => [
+        "controller" => "Api/showFavorite.php",
+        "action" => "showFavorite",
+    ],
 ];
+
+
+
+
+
+
+
+
