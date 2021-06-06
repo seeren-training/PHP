@@ -63,6 +63,10 @@
                             </p>
                         </div>
                         <div class="card-footer">
+                            <?php if (!array_key_exists("has", $favorite)): ?>
+                            <a href="/favorites?favorite=<?= $favorite["id"] ?>"
+                               class="btn btn-success">Add</a>
+                            <?php endif ?>
                             <a target="_blank" href="<?= $favorite["href"] ?>"
                                class="btn btn-primary">Visit</a>
                         </div>
@@ -74,7 +78,6 @@
 </main>
 
 <script>
-    <?php include '../templates/favorite/showFavorite.js' ?>
 </script>
 
 <?php include '../templates/footer.html.php' ?>

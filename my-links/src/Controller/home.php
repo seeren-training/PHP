@@ -6,7 +6,7 @@ include '../src/Service/Form/isSubmitted.php';
 include '../src/Service/Form/isValid.php';
 include '../src/Service/Favorite/getUserFavorites.php';
 include '../src/Service/Favorite/addFavorite.php';
-include '../src/Service/Favorite/deleteFavorite.php';
+include '../src/Service/Favorite/deleteFavoriteById.php';
 include_once "../src/Service/Core/exitUrl.php";
 
 function home(): void
