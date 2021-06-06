@@ -78,6 +78,7 @@
 </main>
 
 <script>
+    <?php include '../templates/favorite/showFavorite.js' ?>
 </script>
 
 <?php include '../templates/footer.html.php' ?>
