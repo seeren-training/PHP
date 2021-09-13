@@ -13,3 +13,11 @@ $myBoolFalse = false;
 $myBoolTrue = true;
 
 $myNull = null;
+
+$action = [
+    "creer",
+    "supprimer"
+];
+
+// Accéder aux éléments d'un tableau
+echo $action[1];
