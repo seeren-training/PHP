@@ -7,24 +7,9 @@ $action = [
     "qux",
 ];
 
+echo $action[2];
 
 // Exploitation d'un tableau de manière répétitive
-for( $i = 0; $i < count($action) ;$i++) {
+for($i = 0; $i < count($action); $i++) {
     echo $action[$i];
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// echo "Le mot '' qu'est ce que c'est?";
-
-

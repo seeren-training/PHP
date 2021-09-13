@@ -1,23 +1,26 @@
 <?php
 
+$optionList = [
+    "creer",
+    "supprimer",
+    "modifier",
+    "lister",
+];
+
 if (1 === $argc) {
     echo "Gestion de stock.\n\n"
-    . "Voiçi la liste des commandes disponibles:\n\n"
-    . "- creer\n"
-    . "- supprimer\n"
-    . "- modifier\n"
-    . "- lister\n";
-}
-if (1 !== $argc) {
-    if ("creer" !== $argv[1]) {
-        if ("supprimer" !== $argv[1]) {
-            if ("modifier" !== $argv[1]) {
-                if ("lister" !== $argv[1]) {
-                    echo "Gestion de stock.\n\n"
-                    . "L'option \"$argv[1]\" n'existe pas:\n\n"
-                    . "- Exécutez l'outil sans arguments pour connaitre la liste des options disponibles.\n";
-                }
-            }
-        }
+    . "Voiçi la liste des commandes disponibles:\n\n";
+    for ($i=0; $i < count($optionList); $i++) { 
+        echo "- $optionList[$i]\n";
     }
+}
+
+if (1 !== $argc 
+    && "creer" !== $argv[1] 
+    && "supprimer" !== $argv[1] 
+    && "modifier" !== $argv[1]
+    && "lister" !== $argv[1]) {
+    echo "Gestion de stock.\n\n"
+    . "L'option \"$argv[1]\" n'existe pas:\n\n"
+    . "- Exécutez l'outil sans arguments pour connaitre la liste des options disponibles.\n";
 }
