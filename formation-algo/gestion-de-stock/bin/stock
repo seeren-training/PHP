@@ -20,7 +20,12 @@ if (1 !== $argc
     && "supprimer" !== $argv[1] 
     && "modifier" !== $argv[1]
     && "lister" !== $argv[1]) {
-    echo "Gestion de stock.\n\n"
-    . "L'option \"$argv[1]\" n'existe pas:\n\n"
+    echo "Gestion de stock.\n\n L'option \"";
+    
+    for ($i = 1; $i < $argc; $i++) { 
+        echo "$argv[$i] ";
+    }
+    
+    echo "\" n'existe pas:\n\n"
     . "- Exécutez l'outil sans arguments pour connaitre la liste des options disponibles.\n";
 }
