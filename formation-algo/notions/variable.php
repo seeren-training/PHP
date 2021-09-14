@@ -18,6 +18,3 @@ $action = [
     "creer",
     "supprimer"
 ];
-
-// Accéder aux éléments d'un tableau
-echo $action[1];

@@ -5,9 +5,9 @@ $productQuantity = 2;
 $productName = "Velo";
 $productColor = "Rouge";
 
-// La concatenation est l'addition de chaine de caractères
 echo "Le produit $productName  est  $productColor";
+// La concatenation est l'addition de chaine de caractères
 echo 'Le produit ' . $productName . ' est ' . $productColor;
 
-// Les opérateurs + - * / sont disponibles
+// Les opérateurs arithmétiques sont disponibles
 echo $productQuantity . ' ' . $productName . ' coute: ' . $productPrice * $productQuantity;

@@ -1,5 +1,7 @@
 <?php
 
+// Afficher "vous voulez créer" quand il tappe "creer"
+
 $optionList = ["creer","supprimer","modifier","lister",];
 if (1 === $argc) {
     echo "Gestion de stock.\n\n"
@@ -7,18 +9,19 @@ if (1 === $argc) {
     for ($i=0; $i < count($optionList); $i++) { 
         echo "- $optionList[$i]\n";
     }
-}
-if (1 !== $argc 
-    && "creer" !== $argv[1] 
-    && "supprimer" !== $argv[1] 
+} else if ("creer" === $argv[1]) {
+
+
+    echo "vous voulez créer quand il tappe creer";
+
+
+} else if ("supprimer" !== $argv[1] 
     && "modifier" !== $argv[1]
     && "lister" !== $argv[1]) {
     echo "Gestion de stock.\n\n L'option \"";
-    
     for ($i = 1; $i < $argc; $i++) { 
         echo "$argv[$i] ";
     }
-    
     echo "\" n'existe pas:\n\n"
     . "- Exécutez l'outil sans arguments pour connaitre la liste des options disponibles.\n";
 }
