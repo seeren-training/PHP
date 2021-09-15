@@ -1,21 +1,30 @@
 <?php
 
+// Récupère mes étudiants
+    // Récupération du contenu du fichier "students.txt"
+    // Transformation de format
+$studentList = unserialize(@file_get_contents("students.txt"));
+
+// Vérifier que si le contenu n'existe pas
+if ($studentList === false) {
+    // Affectation d'une valeur d'initialisation
+    $studentList = [];
+}
+
+// Je déclare un étudiant
+$student = ["John", "Student"];
+// J'ajoute l'étudiant créé à lal iste des étudiants
+$studentList[] = $student;
+
+// Je sauvegarde la liste des étudiants
+    // Sauvegarde du contenu dans le fichier "students.txt"
+    // Transformation de format
+file_put_contents("students.txt", serialize($studentList));
+
+echo "J'ai " . count($studentList) . " students";
 
 
-$data = "Hello World";
 
-// Ecrire dans un fichier existant ou non
-// Si le fichier n'existe pas il sera créé
-file_put_contents("formation-algo/mon-fichier.txt", $data);
-
-
-// Lire un fichier
-// Si le fichier n'existe pas il y a un Warning
-// Le @ désactive l'affichage des erreurs sur une instruction
-$contents = @file_get_contents("formation-algo/mon-fichisfsrgdsrgdrger.txt");
-
-
-echo $contents;
 
 
 
