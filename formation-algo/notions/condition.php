@@ -19,15 +19,15 @@ if ($user !== "Bryan") {
 
 
 
-$user = "John";
+    $user = "John";
 
-// SI
-if ($user === "Bryan") {
-    echo "Hello Bryan, ou est John?";
-// SINON SI
-} elseif ($user === "John") {
-    echo "Hello John";
-// SINON
-} else {
-    echo "Hello tu as vu Bryan?";
-}
+    // SI
+    if ($user === "Bryan") {
+        echo "Hello Bryan, ou est John?";
+    // SINON SI
+    } elseif ($user === "John") {
+        echo "Hello John";
+    // SINON
+    } else {
+        echo "Hello tu as vu Bryan?";
+    }

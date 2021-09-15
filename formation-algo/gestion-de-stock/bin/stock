@@ -1,20 +1,41 @@
 <?php
 
-// Afficher "vous voulez créer" quand il tappe "creer"
-
+$productName = null;
+$productPrice = null;
+$productStock = null;
 $optionList = ["creer","supprimer","modifier","lister",];
+
 if (1 === $argc) {
     echo "Gestion de stock.\n\n"
     . "Voiçi la liste des commandes disponibles:\n\n";
     for ($i=0; $i < count($optionList); $i++) { 
         echo "- $optionList[$i]\n";
     }
-} else if ("creer" === $argv[1]) {
-
-
-    echo "vous voulez créer quand il tappe creer";
-
-
+} else if ("creer" === $argv[1] && 2 === $argc) {
+    echo "Gestion de stock.\n\n"
+    . "Création d'un nouveau produit:\n\n";
+    $productName = readline("> Nom du produit:\n");
+    if ("" === $productName) {
+        echo "Erreur:\n\n"
+        . "- Le \"nom\" du produit n'est pas valide.\n";
+    } else {
+        $productPrice = readline("> Prix du produit:\n");
+        if ("" === $productPrice || "0" === $productPrice) {
+            echo "Erreur:\n\n"
+            . "- Le \"prix\" du produit n'est pas valide.\n";
+        } else {
+            $productStock = readline("> Stock du produit:\n");
+            if ("" === $productStock) {
+                echo "Erreur:\n\n"
+                . "- Le \"stock\" du produit n'est pas valide.\n";
+            } else {
+                echo "Le produit a bien été enregistré:\n"
+                . "- nom: $productName\n"
+                . "- prix: $productPrice\n"
+                . "- stock: $productStock\n";
+            }
+        }
+    }
 } else if ("supprimer" !== $argv[1] 
     && "modifier" !== $argv[1]
     && "lister" !== $argv[1]) {
