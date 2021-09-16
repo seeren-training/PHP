@@ -11,6 +11,7 @@ if ($studentList === false) {
     $studentList = [];
 }
 
+
 // Je déclare un étudiant
 $student = ["John", "Student"];
 // J'ajoute l'étudiant créé à lal iste des étudiants
