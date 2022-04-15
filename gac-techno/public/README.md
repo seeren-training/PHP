@@ -133,3 +133,35 @@ $ticketList = [
     ],
 ];
 ```
+
+
+___
+
+## Manipulation 5: Les fichiers
+
+**PB**: les tickets ne sont pas sur un espace de stockage mutualisé
+
+*Sauvegarder de la données*
+
+```php
+// Transformer le format pour qu'il soit stockable
+$serialization = serialize($foo);
+
+// Ecrire dans un fichier
+file_put_contents($path, $serialization);
+```
+
+*Récupérer de la données*
+
+```php
+// Lire dans un fichier
+$fileContent = file_get_contents($path);
+
+// Transforme en variable un string qui résulte d'une sérialization
+$initialValue = unserialize($fileContent);
+
+```
+
+**Solution**: récupérer les tickets du fichier ou ils sont stockés pour les afficher comme précédement
+
+> Le fichier se trouve à l'adresse suivante: https://github.com/seeren-training/PHP/blob/master/gac-techno/includes/data/tickets.serialize. Je vous invite dans le dossier include a créer un dossier 'data' qui contient le fichiers 'tickets.serialize'.

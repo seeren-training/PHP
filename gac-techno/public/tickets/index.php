@@ -1,24 +1,8 @@
 <?php
 
+include __DIR__ . '/../../includes/data/functions.php';
+
 $title = 'Ticket List';
-$ticketList = [
-    [
-        'label' => 'Issue',
-        'description' => 'An item',
-    ],
-    [
-        'label' => 'Risky',
-        'description' => 'An second item',
-    ],
-    [
-        'label' => 'Normal',
-        'description' => 'An third item',
-    ],
-    [
-        'label' => 'Issue',
-        'description' => 'An fourth item',
-    ],
-];
 $levelList = [
     'Issue' => 'danger',
     'Risky' => 'warning',
@@ -26,6 +10,7 @@ $levelList = [
     'Basic' => 'success',
 ];
 
+$ticketList = getTicketList();
 
 ?>
 
