@@ -1,4 +1,33 @@
-<?php $title = 'Ticket List' ?>
+<?php
+
+$title = 'Ticket List';
+$ticketList = [
+    [
+        'label' => 'Issue',
+        'description' => 'An item',
+    ],
+    [
+        'label' => 'Risky',
+        'description' => 'An second item',
+    ],
+    [
+        'label' => 'Normal',
+        'description' => 'An third item',
+    ],
+    [
+        'label' => 'Issue',
+        'description' => 'An fourth item',
+    ],
+];
+$levelList = [
+    'Issue' => 'danger',
+    'Risky' => 'warning',
+    'Normal' => 'info',
+    'Basic' => 'success',
+];
+
+
+?>
 
 <?php include __DIR__ . '/../../includes/header.php' ?>
 
@@ -12,39 +41,14 @@
             <div class="h-100 card position-relative">
                 <h2 class="card-title p-2">Todo</h2>
                 <ul class="list-group list-group-flush">
-
-                    <?php
-
-                    $ticketList = [
-                        [
-                            'label' => 'Issue',
-                            'description' => 'An item',
-                        ],
-                        [
-                            'label' => 'Risky',
-                            'description' => 'An second item',
-                        ],
-                        [
-                            'label' => 'Normal',
-                            'description' => 'An third item',
-                        ],
-                        [
-                            'label' => 'Issue',
-                            'description' => 'An fourth item',
-                        ],
-                    ];
-
-                    foreach ($ticketList as $index => $ticket) { ?>
-
-                        <span class="badge bg-danger"><?= $ticket['label'] ?></span>
+                    <?php foreach ($ticketList as $index => $ticket) { ?>
+                        <span class="badge bg-<?= $levelList[$ticket['label']] ?>"><?= $ticket['label'] ?></span>
                         <li class="list-group-item">
                             <a href="./show.html" class="text-decoration-none text-dark">
                                 <?= $ticket['description'] ?>
                             </a>
                         </li>
-
                     <?php } ?>
-
                 </ul>
             </div>
         </div>
